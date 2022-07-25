@@ -1,0 +1,18 @@
+import { ThemeProvider } from "styled-components";
+import { Normalize } from "styled-normalize";
+import { GlobalStyle } from "./GlobalStyle";
+import { theme } from "./theme";
+
+export const App = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <Normalize />
+      <GlobalStyle />
+      <div className="App">
+        <h1>Movies Browser</h1>
+        <h2>test</h2>
+        <p>Test</p>
+      </div>
+    </ThemeProvider>
+  );
+};

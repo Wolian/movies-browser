@@ -1,5 +1,5 @@
-const colorNames = {
-    black: "#000000",
+export const theme = {
+  colors: {
     white: "#FFFFFF",
     mercury: "#E5E5E5",
     stormGray: "#74788B",
@@ -8,14 +8,12 @@ const colorNames = {
     waterloo: "#7E839A",
     pattensBlue: "#D6E4FF",
     scienceBlue: "#0044CC",
-};
 
-const common = {
     breakpoints: {
-        mobileMax: "767px",
-        tabletVerticalMax: "991px",
-        tabletHorizontalMax: "1199px",
+      mobile: "767px",
+      tablet: "1024px",
     },
     boxShadow: "0px 4px 12px rgba(186, 199, 213, 0.5)",
     borderRadiusSmall: "5px",
+  },
 };
