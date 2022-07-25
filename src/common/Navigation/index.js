@@ -9,10 +9,9 @@ import {
   Item,
   Link,
   LinkActive,
-  Search,
 } from "./styled";
+import Search from "../Search";
 import logo from "./logo.svg";
-import search from "./search.svg";
 
 const Navigation = () => (
   <Header>
@@ -35,12 +34,7 @@ const Navigation = () => (
           </List>
         </Menu>
       </Nav>
-      <Search>
-        <div>
-          <img src={search} width="18" height="18" alt="" />
-          <input placeholder="Search for movie..." />
-        </div>
-      </Search>
+      <Search />
     </Content>
   </Header>
 );

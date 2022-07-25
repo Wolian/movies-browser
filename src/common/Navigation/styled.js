@@ -74,5 +74,3 @@ export const LinkActive = styled.a`
   border: 1px solid ${({ theme }) => theme.colors.white};
   border-radius: 24px;
 `;
-
-export const Search = styled.div``;
