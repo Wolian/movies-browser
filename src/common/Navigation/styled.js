@@ -98,4 +98,8 @@ export const LinkActive = styled.a`
   transition: opacity 0.5s;
   border: 1px solid ${({ theme }) => theme.colors.white};
   border-radius: 24px;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
