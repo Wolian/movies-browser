@@ -18,7 +18,13 @@ export const WrpapperSearch = styled.div`
 `;
 
 export const IconSearch = styled.img`
+  width: 24px;
   margin-right: 16px;
+
+  @media (max-width: 570px) {
+    width: 16px;
+    margin-right: 10px;
+  }
 `;
 
 export const Input = styled.input`

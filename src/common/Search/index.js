@@ -3,7 +3,7 @@ import search from "./search.svg";
 
 const Search = () => (
   <WrpapperSearch>
-    <IconSearch src={search} width="24" height="24" alt="" />
+    <IconSearch src={search} alt="" />
     <Input placeholder="Search for movie..." />
   </WrpapperSearch>
 );
