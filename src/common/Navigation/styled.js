@@ -57,12 +57,6 @@ export const Link = styled.a`
   &:hover {
     opacity: 0.7;
   }
-
-  // Style do linku aktywnego, potrzebne kiedy dodamy React Router.
-  &:active {
-    border: 1px solid ${({ theme }) => theme.colors.white};
-    border-radius: 24px;
-  }
 `;
 
 // To będzie do usunięcia, kiedy wprowadzimy React Router. Jest to tymczasowy zabieg aby pokazać jak będzie wyglądał link aktywny.
