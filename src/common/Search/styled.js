@@ -6,6 +6,15 @@ export const WrpapperSearch = styled.div`
   padding: 15px 26px;
   background: ${({ theme }) => theme.colors.white};
   border-radius: 32px;
+
+  @media (max-width: 900px) {
+    width: 90%;
+    margin-top: 13px;
+  }
+
+  @media (max-width: 570px) {
+    padding: 8px 12px;
+  }
 `;
 
 export const IconSearch = styled.img`
@@ -22,5 +31,17 @@ export const Input = styled.input`
   &:focus {
     outline: none;
     border: none;
+  }
+
+  @media (max-width: 1080px) {
+    width: 240px;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+
+  @media (max-width: 570px) {
+    font-size: 13px;
   }
 `;

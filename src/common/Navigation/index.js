@@ -3,6 +3,7 @@ import {
   Content,
   Nav,
   Logo,
+  ImageLogo,
   NameWebsite,
   Menu,
   List,
@@ -18,7 +19,7 @@ const Navigation = () => (
     <Content>
       <Nav>
         <Logo>
-          <img src={logo} alt="Logo - Movies Browser" width="40" height="40" />
+          <ImageLogo src={logo} alt="Logo - Movies Browser" />
           <NameWebsite>
             <Link href="#">Movies Browser</Link>
           </NameWebsite>
