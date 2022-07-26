@@ -10,10 +10,10 @@ export const theme = {
     pattensBlue: "#D6E4FF",
     scienceBlue: "#0044CC",
   },
-    breakpoints: {
-      mobile: "767px",
-      tablet: "1024px",
-    },
-    boxShadow: "0px 4px 12px rgba(186, 199, 213, 0.5)",
-    borderRadiusSmall: "5px",
+  breakpoints: {
+    mobile: "767px",
+    tablet: "1024px",
+  },
+  boxShadow: "0px 4px 12px rgba(186, 199, 213, 0.5)",
+  borderRadiusSmall: "5px",
 };
