@@ -67,6 +67,10 @@ export const Header = styled.h1`
   font-size: 64px;
   line-height: 120%;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 24px;
+  } ;
 `;
 
 export const Rating = styled.div`
@@ -74,15 +78,30 @@ export const Rating = styled.div`
   align-items: baseline;
   gap: 12px;
   margin-top: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-top: 4px;
+    gap: 8px;
+  } ;
 `;
 
 export const Icon = styled(StarIcon)`
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    height: 16px;
+    width: 16px;
+    align-self: flex-start;
+  } ;
 `;
 
 export const Rate = styled.span`
   font-weight: 500;
   font-size: 30px;
   line-height: 130%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-weight: 600;
+    font-size: 14px;
+  } ;
 `;
 
 export const Span = styled.span`
@@ -90,9 +109,20 @@ export const Span = styled.span`
   font-size: 16px;
   line-height: 120%;
   margin-left: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 10px;
+    margin-left: 2px;
+  } ;
 `;
 
 export const Votes = styled.span`
   font-weight: 400;
   font-size: 16px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 10px;
+    margin: 0;
+    align-self: baseline;
+  } ;
 `;

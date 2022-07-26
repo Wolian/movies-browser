@@ -14,10 +14,29 @@ export const Wrapper = styled.section`
   padding: 40px;
   margin: 64px auto;
   box-shadow: ${({ theme }) => theme.boxShadow};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin: 21px 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-areas:
+      "poster content"
+      "poster content"
+      "description description";
+    padding: 16px;
+    gap: 16px;
+    margin: 16px 16px 0px 16px;
+  } ;
 `;
 
 export const Poster = styled.img`
   grid-area: poster;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 114px;
+    height: 169px;
+  } ;
 `;
 
 export const InfoWrapper = styled.div`
@@ -27,6 +46,11 @@ export const InfoWrapper = styled.div`
   align-items: flex-start;
   padding: 8px 0px;
   gap: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 0;
+    gap: 8px;
+  } ;
 `;
 
 export const Title = styled.h1`
@@ -34,6 +58,12 @@ export const Title = styled.h1`
   font-weight: 600;
   line-height: 120%;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-weight: 500;
+    font-size: 4.5vw;
+    line-height: 130%;
+  } ;
 `;
 
 export const Year = styled.p`
@@ -41,12 +71,22 @@ export const Year = styled.p`
   font-size: 22px;
   line-height: 120%;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 130%;
+  } ;
 `;
 
 export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-weight: 400;
+    line-height: 130%;
+  } ;
 `;
 
 export const Section = styled.div`
@@ -58,6 +98,10 @@ export const Section = styled.div`
   font-weight: 400;
   font-size: 18px;
   line-height: 120%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 12px;
+  } ;
 `;
 
 export const Production = styled.p`
@@ -65,6 +109,10 @@ export const Production = styled.p`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.stormGray};
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  } ;
 `;
 
 export const Country = styled.p`
@@ -77,6 +125,10 @@ export const RlsDate = styled.p`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.stormGray};
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  } ;
 `;
 
 export const Date = styled.p`
@@ -91,21 +143,42 @@ export const GenresWrapper = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 10px;
+    line-height: 110%;
+  } ;
 `;
 
 export const Genre = styled.span`
   background-color: ${({ theme }) => theme.colors.mystic};
   border-radius: ${({ theme }) => theme.borderRadiusSmall};
   padding: 8px 16px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 4px 8px;
+    gap: 8px;
+  } ;
 `;
 
 export const Rating = styled.div`
   display: flex;
   align-items: baseline;
   gap: 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 8px;
+  } ;
 `;
 
 export const Icon = styled(StarIcon)`
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    height: 16px;
+    width: 16px;
+  } ;
 `;
 
 export const Rate = styled.span`
@@ -113,6 +186,12 @@ export const Rate = styled.span`
   font-size: 22px;
   line-height: 130%;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 130%;
+  } ;
 `;
 
 export const Span = styled.span`
@@ -120,6 +199,10 @@ export const Span = styled.span`
   font-size: 14px;
   line-height: 120%;
   margin-left: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  } ;
 `;
 
 export const Votes = styled.span`
@@ -127,6 +210,12 @@ export const Votes = styled.span`
   font-size: 14px;
   line-height: 120%;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    color: ${({ theme }) => theme.colors.waterloo};
+    font-size: 13px;
+    line-height: 130%;
+  } ;
 `;
 
 export const Description = styled.div`
@@ -135,4 +224,11 @@ export const Description = styled.div`
   font-size: 20px;
   line-height: 160%;
   color: ${({ theme }) => theme.colors.black};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    word-wrap: break-word;
+  } ;
 `;
