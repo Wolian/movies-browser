@@ -1,11 +1,11 @@
-import { WrpapperSearch, IconSearch, Input } from "./styled";
+import { Wrapper, IconSearch, Input } from "./styled";
 import search from "./search.svg";
 
 const Search = () => (
-  <WrpapperSearch>
+  <Wrapper>
     <IconSearch src={search} alt="" />
     <Input placeholder="Search for movie..." />
-  </WrpapperSearch>
+  </Wrapper>
 );
 
 export default Search;

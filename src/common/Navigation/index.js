@@ -4,7 +4,7 @@ import {
   Nav,
   Logo,
   ImageLogo,
-  NameWebsite,
+  Title,
   Menu,
   List,
   Item,
@@ -20,9 +20,9 @@ const Navigation = () => (
       <Nav>
         <Logo>
           <ImageLogo src={logo} alt="Logo - Movies Browser" />
-          <NameWebsite>
+          <Title>
             <Link href="#">Movies Browser</Link>
-          </NameWebsite>
+          </Title>
         </Logo>
         <Menu>
           <List>

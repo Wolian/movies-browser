@@ -38,7 +38,7 @@ export const ImageLogo = styled.img`
   }
 `;
 
-export const NameWebsite = styled.h1`
+export const Title = styled.h1`
   margin: 0;
   margin-left: 12px;
   font-size: 24px;
