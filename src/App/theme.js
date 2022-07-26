@@ -1,5 +1,6 @@
 export const theme = {
   colors: {
+    black: "#000000",
     white: "#FFFFFF",
     mercury: "#E5E5E5",
     stormGray: "#74788B",
@@ -13,8 +14,6 @@ export const theme = {
     mobile: "767px",
     tablet: "1024px",
   },
-  others: {
-    boxShadow: "0px 4px 12px rgba(186, 199, 213, 0.5)",
-    borderRadiusSmall: "5px",
-  },
+  boxShadow: "0px 4px 12px rgba(186, 199, 213, 0.5)",
+  borderRadiusSmall: "5px",
 };
