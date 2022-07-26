@@ -1,5 +1,6 @@
 export const theme = {
   colors: {
+    black: "#000000",
     white: "#FFFFFF",
     mercury: "#E5E5E5",
     stormGray: "#74788B",
@@ -8,12 +9,11 @@ export const theme = {
     waterloo: "#7E839A",
     pattensBlue: "#D6E4FF",
     scienceBlue: "#0044CC",
-
+  },
     breakpoints: {
       mobile: "767px",
       tablet: "1024px",
     },
     boxShadow: "0px 4px 12px rgba(186, 199, 213, 0.5)",
     borderRadiusSmall: "5px",
-  },
 };
