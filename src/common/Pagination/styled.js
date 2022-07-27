@@ -29,11 +29,20 @@ export const Link = styled.a`
   border-radius: ${({ theme }) => theme.borderRadiusSmall};
   color: ${({ theme }) => theme.colors.woodSmoke};
   text-decoration: none;
+  transition: filter 0.5s;
+
+  &:hover {
+    filter: brightness(95%);
+  }
 
   ${({ active }) =>
     active &&
     css`
       background: ${({ theme }) => theme.colors.pattensBlue};
+
+      &:hover {
+        filter: brightness(97%);
+      }
     `};
 
   @media (max-width: 720px) {

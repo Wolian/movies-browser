@@ -9,6 +9,7 @@ const Pagination = () => (
         <ArrowMobile rotation={false} active={false} />
         <Text>First</Text>
       </Link>
+
       <Link active={false} href="#">
         <Arrow rotation={false} active={false} />
         <Text>Previous</Text>
@@ -24,6 +25,7 @@ const Pagination = () => (
         <Text>Next</Text>
         <Arrow rotation={true} active={true} />
       </Link>
+
       <Link active={true} href="#">
         <Text>Last</Text>
         <ArrowMobile rotation={true} active={true} />
