@@ -9,6 +9,7 @@ export const Wrapper = styled.section`
 
   @media (max-width: 335px) {
     flex-direction: column;
+    gap: 12px;
   }
 `;
 
