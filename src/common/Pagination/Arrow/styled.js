@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 export const Img = styled.img`
   width: 7px;
   height: 11px;
+  margin-right: 4px;
 
   ${({ active }) =>
     active &&
@@ -14,6 +15,17 @@ export const Img = styled.img`
   ${({ rotation }) =>
     rotation &&
     css`
+      margin-right: 0;
+      margin-left: 4px;
       transform: rotate(180deg);
     `};
+`;
+
+export const ImgMobile = styled(Img)`
+  display: none;
+
+  @media (max-width: 720px) {
+    display: inline;
+    margin: 0;
+  }
 `;

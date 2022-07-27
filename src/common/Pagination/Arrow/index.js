@@ -1,5 +1,5 @@
 import arrow from "./arrow.svg";
-import { Img } from "./styled";
+import { Img, ImgMobile } from "./styled";
 
 //        States of the arrow
 // active                   rotation
@@ -10,4 +10,8 @@ const Arrow = ({ rotation, active }) => (
   <Img active={active} rotation={rotation} src={arrow} alt="" />
 );
 
-export default Arrow;
+const ArrowMobile = ({ rotation, active }) => (
+  <ImgMobile active={active} rotation={rotation} src={arrow} alt="" />
+);
+
+export { Arrow, ArrowMobile };
