@@ -5,13 +5,13 @@ const Pagination = () => (
   <Wrapper>
     <p>
       <Link active={false} href="#">
-        <Arrow rotation={false} active={false} />
-        <ArrowMobile rotation={false} active={false} />
+        <Arrow active={false} />
+        <ArrowMobile active={false} />
         <Text>First</Text>
       </Link>
 
       <Link active={false} href="#">
-        <Arrow rotation={false} active={false} />
+        <Arrow active={false} />
         <Text>Previous</Text>
       </Link>
     </p>
