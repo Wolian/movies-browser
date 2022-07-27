@@ -2,7 +2,7 @@
 
 ## This page is in progress of building.
 
-### Demo link: https://github.com/Wolian/movies-browser
+### Demo link: https://wolian.github.io/movies-browser/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
