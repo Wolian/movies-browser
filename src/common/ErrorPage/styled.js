@@ -84,4 +84,10 @@ export const Button = styled.button`
     padding: 12px 20px;
     font-weight: 500;
   }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #2661d8;
+    transition: 0.2s;
+  }
 `;
