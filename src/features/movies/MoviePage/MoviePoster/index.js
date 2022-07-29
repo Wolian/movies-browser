@@ -1,9 +1,9 @@
 import {
-  BackgroundShadow,
+  Header,
   Wrapper,
   Image,
   MainInfo,
-  Header,
+  Title,
   Rating,
   Icon,
   Rate,
@@ -13,11 +13,11 @@ import {
 
 export const MoviePoster = () => {
   return (
-    <BackgroundShadow>
+    <Header>
       <Wrapper>
         <Image src="https://i.ibb.co/GxWnPn5/Poster-big.jpg" alt="" /*póki co image z hostingu, jak będzie API to zmienie */ />
         <MainInfo>
-          <Header>Mulan</Header>
+          <Title>Mulan</Title>
           <Rating>
             <Icon />
             <Rate>
@@ -27,6 +27,6 @@ export const MoviePoster = () => {
           </Rating>
         </MainInfo>
       </Wrapper>
-    </BackgroundShadow>
+    </Header>
   );
 };

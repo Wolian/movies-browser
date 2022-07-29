@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "../Vector.svg";
 
-export const BackgroundShadow = styled.header`
+export const Header = styled.header`
   display: flex;
   justify-content: center;
   background: linear-gradient(
@@ -62,7 +62,7 @@ export const MainInfo = styled.div`
   color: white;
 `;
 
-export const Header = styled.h1`
+export const Title = styled.h1`
   font-weight: 600;
   font-size: 64px;
   line-height: 120%;
