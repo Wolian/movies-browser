@@ -29,10 +29,10 @@ export const Link = styled.a`
   border-radius: ${({ theme }) => theme.borderRadiusSmall};
   color: ${({ theme }) => theme.colors.woodSmoke};
   text-decoration: none;
-  transition: filter 0.5s;
+  transition: background 0.4s;
 
   &:hover {
-    filter: brightness(95%);
+    background: ${({ theme }) => theme.colors.ghost};
   }
 
   ${({ active }) =>
@@ -41,7 +41,7 @@ export const Link = styled.a`
       background: ${({ theme }) => theme.colors.pattensBlue};
 
       &:hover {
-        filter: brightness(97%);
+        background: ${({ theme }) => theme.colors.linkWater};
       }
     `};
 
