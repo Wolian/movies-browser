@@ -1,10 +1,12 @@
-import { Wrapper, Icon, Header, Text, Paragaph, Button } from "./styled";
+import { Wrapper, Icon, Span, Header, Text, Paragaph, Button } from "./styled";
 
 const ErrorPage = () => {
   return (
     <Wrapper>
       <Icon />
-      <Header>OOOps! Something went wrong...</Header>
+      <Header>
+        <Span>OOOps!</Span> Something went wrong...
+      </Header>
       <Text>
         <Paragaph>
           Please check your newtork connection <br />
