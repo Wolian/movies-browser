@@ -22,7 +22,7 @@ export const Section = styled.div`
   } ;
 `;
 
-export const Header = styled.h1`
+export const Header = styled.h2`
   color: ${({ theme }) => theme.colors.black};
   font-weight: 600;
   font-size: 36px;
@@ -30,7 +30,7 @@ export const Header = styled.h1`
   margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 5.35vw;
+    font-size: 20px;
   } ;
 `;
 
@@ -41,13 +41,11 @@ export const Container = styled.div`
   grid-gap: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 12px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-top: 12px;
   }
@@ -67,7 +65,6 @@ export const Tile = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 8px;
-    display: flex;
     flex-direction: column;
     gap: 8px;
     border-radius: ${({ theme }) => theme.borderRadiusSmall};
