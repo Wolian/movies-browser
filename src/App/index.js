@@ -4,7 +4,6 @@ import { MoviePage } from "../features/movies/MoviePage";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
 import Navigation from "../common/Navigation";
-import Pagination from "../common/Pagination";
 
 export const App = () => {
   return (
@@ -15,7 +14,6 @@ export const App = () => {
       <div className="App">
         <MoviePage />
       </div>
-      <Pagination />
     </ThemeProvider>
   );
 };
