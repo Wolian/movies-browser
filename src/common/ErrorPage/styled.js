@@ -90,4 +90,8 @@ export const Button = styled.button`
     background-color: #2661d8;
     transition: 0.2s;
   }
+
+  &:active {
+    background-color: rgba(0, 68, 204, 0.9);
+  }
 `;
