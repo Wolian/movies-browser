@@ -31,10 +31,6 @@ export const Link = styled.a`
   text-decoration: none;
   transition: background 0.4s;
 
-  &:hover {
-    background: ${({ theme }) => theme.colors.ghost};
-  }
-
   ${({ active }) =>
     active &&
     css`

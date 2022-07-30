@@ -4,13 +4,13 @@ import { Arrow, ArrowMobile } from "./Arrow";
 const Pagination = () => (
   <Wrapper>
     <p>
-      <Link active={false} href="#">
+      <Link active={false}>
         <Arrow active={false} />
         <ArrowMobile active={false} />
         <Text>First</Text>
       </Link>
 
-      <Link active={false} href="#">
+      <Link active={false}>
         <Arrow active={false} />
         <Text>Previous</Text>
       </Link>
