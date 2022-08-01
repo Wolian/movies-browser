@@ -6,7 +6,7 @@ export const Container = styled.div`
   padding: 10px;
 `;
 
-export const Spiner = styled.div`
+export const Spinner = styled.div`
   width: 91px;
   height: 91px;
   border: 11px solid ${({ theme }) => theme.colors.snuff};

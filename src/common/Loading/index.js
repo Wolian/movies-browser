@@ -1,8 +1,8 @@
-import { Container, Spiner } from "./styled";
+import { Container, Spinner } from "./styled";
 
 const Loading = () => (
   <Container>
-    <Spiner></Spiner>
+    <Spinner></Spinner>
   </Container>
 );
 
