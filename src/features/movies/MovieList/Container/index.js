@@ -13,12 +13,10 @@ export const Container = styled.div`
     grid-gap: 24px;
     
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
-        display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
   
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        display: grid;
         grid-template-columns: repeat(1, 1fr);
         
     }
