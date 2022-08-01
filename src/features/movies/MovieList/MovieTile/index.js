@@ -105,7 +105,6 @@ export const Year = styled.div`
 export const Tags = styled.ul`
     list-style: none;
     display: flex;
-    flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
     padding: 0px;
@@ -115,7 +114,6 @@ export const Tags = styled.ul`
 export const Tag = styled.li`
     background-color: ${({ theme }) => theme.colors.mystic};
     display: flex;
-    flex-direction: row;
     align-items: center;
     padding: 8px 16px;
     gap: 10px;
@@ -134,11 +132,8 @@ export const Tag = styled.li`
 
 export const Rating = styled.div`
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 12px;
-    width: 140px;
-    height: 24px;
 `;
 
 export const Icon = styled.img`
