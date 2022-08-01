@@ -23,9 +23,6 @@ export const MovieTile = styled.div`
     }
   
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
         padding: 16px;
         width: 288px;
         height: 201px;
