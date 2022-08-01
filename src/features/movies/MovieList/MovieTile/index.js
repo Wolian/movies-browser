@@ -5,8 +5,6 @@ export const MovieTile = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 16px;
-    width: 324px;
-    height: 650px;
     background-color: ${({ theme }) => theme.colors.white};
     box-shadow: ${({ theme }) => theme.boxShadow};
     border-radius: ${({ theme }) => theme.borderRadiusSmall};
@@ -76,9 +74,10 @@ export const Description = styled.div`
     }
 `;
 
-export const Title = styled.header`
+export const Title = styled.h2`
     font-weight: 500;
     font-size: 22px;
+    margin: 0;
     line-height: 130%;
     color: ${({ theme }) => theme.colors.woodSmoke};
 
