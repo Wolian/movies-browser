@@ -10,7 +10,6 @@ export const App = () => {
       <Normalize />
       <GlobalStyle />
       <div className="App">
-      <MovieList />
       </div>
     </ThemeProvider>
   );
