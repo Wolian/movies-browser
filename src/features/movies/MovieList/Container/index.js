@@ -24,7 +24,6 @@ export const Container = styled.div`
 
 export const Header = styled.h1`
     color: ${({ theme }) => theme.colors.woodSmoke};
-    font-family: Poppins;
     font-size: 36px;
     font-weight: 600;
     line-height: 43px;
