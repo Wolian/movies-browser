@@ -1,4 +1,4 @@
-import { MovieCast } from "./MovieCast";
+import { MoviePeople } from "./MoviePeople";
 import { MoviePoster } from "./MoviePoster";
 import { MovieTile } from "./MovieTile";
 import { Container } from "./styled";
@@ -10,7 +10,8 @@ export const MoviePage = () => {
       <MoviePoster />
       <Container>
         <MovieTile />
-        <MovieCast />
+        <MoviePeople title={"Cast"} />
+        <MoviePeople title={"Crew"} />
         <Pagination />
       </Container>
     </>

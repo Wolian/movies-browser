@@ -2,24 +2,15 @@ import styled from "styled-components";
 
 export const Wrapper = styled.section`
   max-width: 1368px;
-  //width: 100%;
   margin: 64px auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    margin: 21px 16px;
+    margin: 21px 0;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    margin: 21px 16px;
+    margin: 21px 0;
   }
-`;
-
-export const Section = styled.div`
-  margin-top: 64px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    margin-top: 21px;
-  } ;
 `;
 
 export const Header = styled.h2`
@@ -37,7 +28,7 @@ export const Header = styled.h2`
 export const Container = styled.div`
   margin-top: 32px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
   grid-gap: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -72,6 +63,7 @@ export const Tile = styled.div`
 `;
 
 export const Image = styled.img`
+  width: 100%;
   border-radius: ${({ theme }) => theme.borderRadiusSmall};
 `;
 
