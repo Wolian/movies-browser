@@ -3,8 +3,12 @@ import styled from "styled-components";
 export const Wrapper = styled.main`
     max-width: 1368px;
     max-height: 1391px;
-    margin-left: 276px;
-    margin-top: 150px;
+    margin: auto;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
+        margin-left: 16px;
+        margin-right: 16px;
+    }
 `;
 
 export const Container = styled.div`
