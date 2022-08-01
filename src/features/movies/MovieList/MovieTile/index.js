@@ -113,8 +113,6 @@ export const Tags = styled.ul`
     flex-wrap: wrap;
     padding: 0px;
     gap: 8px;
-
-
 `;
 
 export const Tag = styled.li`
