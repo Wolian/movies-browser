@@ -1,17 +1,15 @@
-import { ThemeProvider } from "styled-components";
-import { Normalize } from "styled-normalize";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { MoviePage } from "../features/movies/MoviePage";
-import { GlobalStyle } from "./GlobalStyle";
-import { theme } from "./theme";
+import { MovieList } from "../features/movies/MovieList";
 import Navigation from "../common/Navigation";
 
 export const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Normalize />
-      <GlobalStyle />
+    <HashRouter>
       <Navigation />
-        <MoviePage />
-    </ThemeProvider>
+      <Routes>
+        <Route path="/" element={<MovieList />} />
+      </Routes>
+    </HashRouter>
   );
 };
