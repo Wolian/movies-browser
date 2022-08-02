@@ -10,13 +10,11 @@ export const Tile = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px;
+    border-radius: ${({ theme }) => theme.borderRadiusSmall};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 8px;
-    flex-direction: column;
-    gap: 8px;
-    border-radius: ${({ theme }) => theme.borderRadiusSmall};
   }
 `;
 

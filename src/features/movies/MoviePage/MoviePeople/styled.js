@@ -7,10 +7,6 @@ export const Wrapper = styled.section`
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     margin: 21px 0;
   }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    margin: 21px 0;
-  }
 `;
 
 export const Header = styled.h2`
@@ -32,12 +28,10 @@ export const Container = styled.div`
   grid-gap: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    grid-template-columns: repeat(3, 1fr);
     margin-top: 12px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 12px;
   }
 `;
