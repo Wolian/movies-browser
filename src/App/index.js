@@ -11,7 +11,6 @@ export const App = () => {
       <Normalize />
       <GlobalStyle />
       <Navigation />
-      <ErrorPage />
       
     </ThemeProvider>
   );
