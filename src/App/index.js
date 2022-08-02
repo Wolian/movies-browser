@@ -11,9 +11,7 @@ export const App = () => {
       <Normalize />
       <GlobalStyle />
       <Navigation />
-      <div className="App">
         <MoviePage />
-      </div>
     </ThemeProvider>
   );
 };
