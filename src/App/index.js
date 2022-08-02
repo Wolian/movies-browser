@@ -8,9 +8,9 @@ export const App = () => {
     <HashRouter>
       <Navigation />
       <Routes>
-        <Route path="/moviepage" element={<MoviePage />} />
-        <Route path="/movies" element={<MovieList />} />
         <Route path="/" element={<MovieList />} />
+        <Route path="/movies" element={<MovieList />} />
+        <Route path="/moviepage" element={<MoviePage />} />
       </Routes>
     </HashRouter>
   );
