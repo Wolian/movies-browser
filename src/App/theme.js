@@ -10,6 +10,8 @@ export const theme = {
     waterloo: "#7E839A",
     pattensBlue: "#D6E4FF",
     scienceBlue: "#0044CC",
+    snuff: "#DDDDEE",
+    linkWater: "#cbd8f2",
   },
   breakpoints: {
     mobile: "767px",
