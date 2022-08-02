@@ -1,5 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { Normalize } from "styled-normalize";
+import { MovieList } from "../features/movies/MovieList";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
 
@@ -8,8 +9,7 @@ export const App = () => {
     <ThemeProvider theme={theme}>
       <Normalize />
       <GlobalStyle />
-      <div className="App">
-      </div>
+        <MovieList />
     </ThemeProvider>
   );
 };

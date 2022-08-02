@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MovieTile = styled.div`
+export const TileWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -9,46 +9,18 @@ export const MovieTile = styled.div`
     box-shadow: ${({ theme }) => theme.boxShadow};
     border-radius: ${({ theme }) => theme.borderRadiusSmall};
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
-        display: flex;
+    @media (max-width: 644px) {
         flex-direction: row;
-        justify-content: space-between;
-        padding: 16px;
-        width: 288px;
-        height: 201px;
-        background-color: ${({ theme }) => theme.colors.white};
-        box-shadow: ${({ theme }) => theme.boxShadow};
-        border-radius: ${({ theme }) => theme.borderRadiusSmall};
-        
     }
-  
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        padding: 16px;
-        width: 288px;
-        height: 201px;
-        background-color: ${({ theme }) => theme.colors.white};
-        box-shadow: ${({ theme }) => theme.boxShadow};
-        border-radius: ${({ theme }) => theme.borderRadiusSmall};
-        
-    }
-  
 `;
 
 export const Image = styled.img`
-    width: 292px;
-    height: 434px;
+    width: 100%;
     border-radius: 5px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
-        width: 114px;
-        height: 169px;
-        border-radius: 5px;
-    }
-  
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        width: 114px;
-        height: 169px;
-        border-radius: 5px;
+    @media (max-width: 644px) {
+        width: 50%;
+        margin-right: 16px;
     }
 `;
 
@@ -57,18 +29,14 @@ export const Content = styled.div`
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
+
+    @media (max-width: 644px) {
+        justify-content: flex-start;
+    }
 `;
 
 export const Description = styled.div`
     padding: 5px 0;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
-        padding: 0 5px;
-    }
-  
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        padding: 5px 0;
-    }
 `;
 
 export const Title = styled.h2`
@@ -77,12 +45,8 @@ export const Title = styled.h2`
     margin: 0;
     line-height: 130%;
     color: ${({ theme }) => theme.colors.woodSmoke};
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
-        font-size: 16px;
-    }
   
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: 644px) {
         font-size: 16px;
     }
     
@@ -92,12 +56,8 @@ export const Year = styled.div`
     font-weight: 400;
     font-size: 16px;
     color: ${({ theme }) => theme.colors.waterloo};
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
-        font-size: 13px;
-    }
   
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: 644px) {
         font-size: 13px;
     }
 `;
@@ -120,12 +80,8 @@ export const Tag = styled.li`
     font-size: 14px;
     font-weight: 400;
     border-radius: 5px;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}){
-        padding: 4px 8px;
-    }
   
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: 644px) {
         padding: 4px 8px;
     }
 `;
@@ -138,7 +94,12 @@ export const Rating = styled.div`
 
 export const Icon = styled.img`
     width: 24px;
-    height: 22.87px;
+    height: 24px;
+
+    @media (max-width: 644px) {
+        width: 16px;
+        height: 16px;
+    }
 `;
 
 export const Rate = styled.div`
