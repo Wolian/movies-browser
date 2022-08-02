@@ -9,7 +9,7 @@ export const theme = {
     waterloo: "#7E839A",
     pattensBlue: "#D6E4FF",
     scienceBlue: "#0044CC",
-    ghost: "#CBCDD6",
+    snuff: "#DDDDEE",
     linkWater: "#cbd8f2",
   },
   breakpoints: {
