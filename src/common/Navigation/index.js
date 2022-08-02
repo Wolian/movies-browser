@@ -9,7 +9,7 @@ import {
   List,
   Item,
   Link,
-  LinkActive,
+  LinkLogo,
 } from "./styled";
 import Search from "../Search";
 import logo from "./logo.svg";
@@ -21,16 +21,16 @@ const Navigation = () => (
         <Logo>
           <ImageLogo src={logo} alt="Logo - Movies Browser" />
           <Title>
-            <Link href="#">Movies Browser</Link>
+            <LinkLogo to="/">Movies Browser</LinkLogo>
           </Title>
         </Logo>
         <Menu>
           <List>
             <Item>
-              <LinkActive href="#">MOVIES</LinkActive>
+              <Link to="/movies">MOVIES</Link>
             </Item>
             <Item>
-              <Link href="#">PEOPLE</Link>
+              <Link to="/moviepage">PEOPLE</Link>
             </Item>
           </List>
         </Menu>
