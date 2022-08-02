@@ -1,6 +1,6 @@
 import { MoviePeople } from "./MoviePeople";
 import { MoviePoster } from "./MoviePoster";
-import { MovieTile } from "./MovieTile";
+import { MovieTile } from "../../../common/MovieTile";
 import { Container } from "./styled";
 import Pagination from "../../../common/Pagination";
 
