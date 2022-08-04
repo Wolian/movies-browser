@@ -20,7 +20,7 @@ import {
   Description,
 } from "./styled";
 
-import { APIPosterUrl } from "../../App/API";
+import { APIPhotoUrl } from "../../App/API";
 
 export const MovieTile = ({
   poster,
@@ -34,7 +34,7 @@ export const MovieTile = ({
 }) => {
   return (
     <Wrapper>
-      <Poster src={`${APIPosterUrl}w342/${poster}`} alt="poster" />
+      <Poster src={`${APIPhotoUrl}w342/${poster}`} alt="poster" />
       <InfoWrapper>
         <Title>{title}</Title>
         <Year>{release ? release.slice(0, 4) : ""}</Year>

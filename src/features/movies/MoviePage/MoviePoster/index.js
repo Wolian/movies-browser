@@ -1,4 +1,4 @@
-import { APIPosterUrl } from "../../../../App/API";
+import { APIPhotoUrl } from "../../../../App/API";
 import {
   Header,
   Wrapper,
@@ -16,7 +16,7 @@ export const MoviePoster = ({ poster, title, rate, count }) => {
   return (
     <Header>
       <Wrapper>
-        <Image src={`${APIPosterUrl}original/${poster}`} alt="" />
+        <Image src={`${APIPhotoUrl}original/${poster}`} alt="" />
         <MainInfo>
           <Title>{title}</Title>
           <Rating>
