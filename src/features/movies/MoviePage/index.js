@@ -5,14 +5,21 @@ import { MoviePoster } from "./MoviePoster";
 import { MovieTile } from "../../../common/MovieTile";
 import { Container } from "./styled";
 import Pagination from "../../../common/Pagination";
-import { fetchMovies, selectMovies } from "../moviesSlice";
+import {
+  fetchMovies,
+  fetchPeople,
+  selectMovies,
+  selectPeople,
+} from "../moviesSlice";
 
 export const MoviePage = () => {
   const dispatch = useDispatch();
   const movies = useSelector(selectMovies);
+  const people = useSelector(selectPeople);
 
   useEffect(() => {
     dispatch(fetchMovies());
+    dispatch(fetchPeople());
   }, [dispatch]);
 
   return (
@@ -34,8 +41,8 @@ export const MoviePage = () => {
           count={movies.vote_count}
           description={movies.overview}
         />
-        <MoviePeople title={"Cast"} />
-        <MoviePeople title={"Crew"} />
+        <MoviePeople title={"Cast"} items={people.cast}/>
+        <MoviePeople title={"Crew"} items={people.crew}/>
         <Pagination />
       </Container>
     </>
