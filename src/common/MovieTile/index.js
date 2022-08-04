@@ -1,67 +1,40 @@
 import {
-  Wrapper,
-  Poster,
-  InfoWrapper,
+  Image,
+  Description,
   Title,
   Year,
-  SectionWrapper,
-  Section,
-  Production,
-  Country,
-  RlsDate,
-  Date,
-  GenresWrapper,
-  Genre,
-  Rating,
+  Tags,
+  Tag,
   Icon,
+  Rating,
   Rate,
-  Span,
   Votes,
-  Description,
+  Content,
+  TileWrapper,
 } from "./styled";
+import poster from "../images/poster.png";
+import vector from "../images/vector.png";
 
 export const MovieTile = () => {
   return (
-    <Wrapper>
-      <Poster
-        src="https://i.ibb.co/ZWTvJ2j/poster.png" /*póki co image z url i bez responsywności mobilnej, jak będzie api to to zmienię*/
-        alt="poster"
-      />
-      <InfoWrapper>
-        <Title>Mulan</Title>
-        <Year>2020</Year>
-
-        <SectionWrapper>
-          <Section>
-            <Production>Production:</Production>
-            <Country>China, USA</Country>
-          </Section>
-          <Section>
-            <RlsDate>Release date:</RlsDate>
-            <Date>24.10.2020</Date>
-          </Section>
-        </SectionWrapper>
-
-        <GenresWrapper>
-          <Genre>Action</Genre>
-          <Genre>Adventure</Genre>
-          <Genre>Drama</Genre>
-        </GenresWrapper>
-
+    <TileWrapper>
+      <Image src={poster} alt="" />
+      <Content>
+        <Description>
+          <Title>Mulan</Title>
+          <Year>2020</Year>
+          <Tags>
+            <Tag>Action</Tag>
+            <Tag>Adventure</Tag>
+            <Tag>Drama</Tag>
+          </Tags>
+        </Description>
         <Rating>
-          <Icon />
-          <Rate>
-            7,8<Span>/ 10</Span>
-          </Rate>
-          <Votes>335 votes</Votes>
+          <Icon src={vector} alt="" />
+          <Rate>7,8</Rate>
+          <Votes>35 votes</Votes>
         </Rating>
-      </InfoWrapper>
-      <Description>
-        A young Chinese maiden disguises herself as a male warrior in order to
-        save her father. Disguises herself as a male warrior in order to save
-        her father. A young Chinese maiden disguises herself as a male warrior
-        in order to save her father.
-      </Description>
-    </Wrapper>
+      </Content>
+    </TileWrapper>
   );
 };
