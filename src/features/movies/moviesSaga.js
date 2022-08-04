@@ -1,7 +1,7 @@
 import axios from "axios";
 import { put, takeEvery } from "redux-saga/effects";
 import { APIKey, APIUrl } from "../../App/API";
-import { setMovies, fetchMovies } from "./moviesSlice";
+import { setMovies, fetchMovies, setPeople, fetchPeople } from "./moviesSlice";
 
 function* fetchMoviesHandler() {
   try {
@@ -15,6 +15,18 @@ function* fetchMoviesHandler() {
   }
 }
 
+function* fetchPeopleHandler() {
+  try {
+    const people = yield axios.get(
+      `${APIUrl}movie/550/credits?api_key=${APIKey}&language=en-US`
+    );
+    yield put(setPeople(people.data));
+  } catch (error) {
+    yield console.log("error", error);
+  }
+}
+
 export function* moviesSaga() {
   yield takeEvery(fetchMovies.type, fetchMoviesHandler);
+  yield takeEvery(fetchPeople.type, fetchPeopleHandler);
 }
