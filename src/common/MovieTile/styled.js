@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as StarIcon } from "../Vector.svg";
+import { ReactComponent as StarIcon } from "../../features/movies/MoviePage/Vector.svg";
 
 export const Wrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.white};
@@ -15,10 +15,6 @@ export const Wrapper = styled.section`
   margin: 64px auto;
   box-shadow: ${({ theme }) => theme.boxShadow};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    margin: 21px 16px;
-  }
-
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-template-areas:
       "poster content"
@@ -32,10 +28,17 @@ export const Wrapper = styled.section`
 
 export const Poster = styled.img`
   grid-area: poster;
+  border-radius: ${({ theme }) => theme.borderRadiusSmall};
+  max-width: 312px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    max-width: 92%;
+    max-height: 92%;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 114px;
-    height: 169px;
+    max-width: 114px;
+    max-height: 169px;
   } ;
 `;
 
