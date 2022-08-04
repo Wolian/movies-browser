@@ -50,7 +50,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Image = styled.img`
-  max-width: 88vw;
+  max-width: 72vw;
   width: fill-available;
   z-index: -1;
 `;

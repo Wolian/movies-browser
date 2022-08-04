@@ -1,3 +1,4 @@
+import { APIPosterUrl } from "../../../../App/API";
 import {
   Header,
   Wrapper,
@@ -11,19 +12,20 @@ import {
   Span,
 } from "./styled";
 
-export const MoviePoster = () => {
+export const MoviePoster = ({ poster, title, rate, count }) => {
   return (
     <Header>
       <Wrapper>
-        <Image src="https://i.ibb.co/GxWnPn5/Poster-big.jpg" alt="" /*póki co image z hostingu, jak będzie API to zmienie */ />
+        <Image src={`${APIPosterUrl}original/${poster}`} alt="" />
         <MainInfo>
-          <Title>Mulan</Title>
+          <Title>{title}</Title>
           <Rating>
             <Icon />
             <Rate>
-              7,8<Span>/ 10</Span>
+              {rate}
+              <Span>/ 10</Span>
             </Rate>
-            <Votes>335 votes</Votes>
+            <Votes>{count} votes</Votes>
           </Rating>
         </MainInfo>
       </Wrapper>
