@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ReactComponent as NoResultsIcon } from "./Icon.svg";
 
 export const Wrapper = styled.main`
-    margin-top: 56px;
+    margin: 56px auto 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,8 +12,6 @@ export const Wrapper = styled.main`
 `;
 
 export const Icon = styled(NoResultsIcon)`
-    display: flex;
-    align-self: flex-end;
     width: 600px;
     
 `;

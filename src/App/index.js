@@ -4,6 +4,7 @@ import { MoviePage } from "../features/movies/MoviePage";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
 import Navigation from "../common/Navigation";
+import NoResultsPage from "../common/NoResultsPage";
 
 export const App = () => {
   return (
@@ -11,7 +12,7 @@ export const App = () => {
       <Normalize />
       <GlobalStyle />
       <Navigation />
-        <MoviePage />
+        <NoResultsPage />
     </ThemeProvider>
   );
 };
