@@ -1,10 +1,12 @@
-import { Header, Icon, Wrapper } from "./styled";
+import { Header, Icon, Photo, Wrapper } from "./styled";
 
 const NoResultsPage = () => {
     return (
         <Wrapper>
             <Header>Sorry, there are no results for </Header>
-            <Icon />
+            <Photo>
+                <Icon />
+            </Photo>
         </Wrapper>
     );
 };

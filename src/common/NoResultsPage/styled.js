@@ -33,3 +33,7 @@ export const Header = styled.h1`
     }
     
 `;
+
+export const Photo = styled.div`
+    text-align: center;
+`;
