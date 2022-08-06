@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { MoviePeople } from "./MoviePeople";
+import { MoviePeople } from "../../../common/MoviePeople";
 import { MoviePoster } from "./MoviePoster";
 import { MovieTile } from "../../../common/MovieTile";
 import { Container } from "./styled";

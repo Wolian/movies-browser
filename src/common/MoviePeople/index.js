@@ -1,4 +1,4 @@
-import { PersonTile } from "../../../../common/PersonTile";
+import { PersonTile } from "../PersonTile";
 import { Wrapper, Header, Container } from "./styled";
 
 export const MoviePeople = ({ title, items }) => {
