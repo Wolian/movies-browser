@@ -15,6 +15,10 @@ export const Wrapper = styled.section`
   margin: 64px auto;
   box-shadow: ${({ theme }) => theme.boxShadow};
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-top: 48px;
+  } ;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-template-areas:
       "poster content"
@@ -22,7 +26,8 @@ export const Wrapper = styled.section`
       "description description";
     padding: 16px;
     gap: 16px;
-    margin: 16px 16px 0px 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   } ;
 `;
 

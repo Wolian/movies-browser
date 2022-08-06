@@ -6,11 +6,7 @@ export const Wrapper = styled.section`
   margin: 64px auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    margin: 21px 16px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    margin: 21px 16px;
+    margin-top: 21px;
   }
 `;
 
@@ -37,17 +33,15 @@ export const Header = styled.h2`
 export const Container = styled.div`
   margin-top: 32px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
   grid-gap: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    grid-template-columns: repeat(3, 1fr);
     margin-top: 12px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 12px;
   }
 `;
 
