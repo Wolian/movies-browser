@@ -4,7 +4,6 @@ import { MoviePeople } from "./MoviePeople";
 import { MoviePoster } from "./MoviePoster";
 import { MovieTile } from "../../../common/MovieTile";
 import { Container } from "./styled";
-import Pagination from "../../../common/Pagination";
 import {
   fetchMovies,
   fetchPeople,
@@ -41,9 +40,8 @@ export const MoviePage = () => {
           count={movies.vote_count}
           description={movies.overview}
         />
-        <MoviePeople title={"Cast"} items={people.cast}/>
-        <MoviePeople title={"Crew"} items={people.crew}/>
-        <Pagination />
+        <MoviePeople title={"Cast"} items={people.cast} />
+        <MoviePeople title={"Crew"} items={people.crew} />
       </Container>
     </>
   );
