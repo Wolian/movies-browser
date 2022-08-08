@@ -1,7 +1,14 @@
 import axios from "axios";
 import { put, takeEvery } from "redux-saga/effects";
 import { APIKey, APIUrl } from "../../App/API";
-import { setMovies, fetchMovies, setPeople, fetchPeople } from "./moviesSlice";
+import {
+  setMovies,
+  fetchMovies,
+  setPeople,
+  fetchPeople,
+  setPopularMovies,
+  fetchPopularMovies,
+} from "./moviesSlice";
 
 function* fetchMoviesHandler() {
   try {
@@ -26,7 +33,19 @@ function* fetchPeopleHandler() {
   }
 }
 
+function* fetchPopularMoviesHandler() {
+  try {
+    const popularMovies = yield axios.get(
+      `${APIUrl}movie/popular/?api_key=${APIKey}&language=en-US&page=1`
+    );
+    yield put(setPopularMovies(popularMovies.data));
+  } catch (error) {
+    yield console.log("error", error);
+  }
+}
+
 export function* moviesSaga() {
   yield takeEvery(fetchMovies.type, fetchMoviesHandler);
   yield takeEvery(fetchPeople.type, fetchPeopleHandler);
+  yield takeEvery(fetchPopularMovies.type, fetchPopularMoviesHandler);
 }
