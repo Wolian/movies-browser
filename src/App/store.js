@@ -10,6 +10,7 @@ const store = configureStore({
     movies: moviesReducer,
     people: moviesReducer,
     popularMovies: moviesReducer,
+    genres: moviesReducer,
   },
   middleware: [sagaMiddleware],
 });

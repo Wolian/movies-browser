@@ -8,6 +8,8 @@ import {
   fetchPeople,
   setPopularMovies,
   fetchPopularMovies,
+  fetchGenres,
+  setGenres,
 } from "./moviesSlice";
 
 function* fetchMoviesHandler() {
@@ -44,8 +46,20 @@ function* fetchPopularMoviesHandler() {
   }
 }
 
+function* fetchGenresHandler() {
+  try {
+    const response = yield axios.get(
+      `${APIUrl}genre/movie/list?api_key=${APIKey}&language=en-US`
+    );
+    yield put(setGenres(response.data.genres));
+  } catch (error) {
+    yield console.log("error", error);
+  }
+}
+
 export function* moviesSaga() {
   yield takeEvery(fetchMovies.type, fetchMoviesHandler);
   yield takeEvery(fetchPeople.type, fetchPeopleHandler);
   yield takeEvery(fetchPopularMovies.type, fetchPopularMoviesHandler);
+  yield takeEvery(fetchGenres.type, fetchGenresHandler);
 }
