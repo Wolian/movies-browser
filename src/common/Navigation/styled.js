@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Header = styled.header`
   display: flex;
@@ -73,14 +74,14 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  padding: 8px 24px;
+  padding: 8px;
 
   @media (max-width: 570px) {
     padding: 8px 12px;
   }
 `;
 
-export const Link = styled.a`
+export const LinkLogo = styled(NavLink)`
   color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
   transition: opacity 0.5s;
@@ -90,16 +91,11 @@ export const Link = styled.a`
   }
 `;
 
-// To będzie do usunięcia, kiedy wprowadzimy React Router. Jest to tymczasowy zabieg aby pokazać jak będzie wyglądał link aktywny.
-export const LinkActive = styled.a`
+export const Link = styled(LinkLogo)`
   padding: 8px 24px;
-  color: ${({ theme }) => theme.colors.white};
-  text-decoration: none;
-  transition: opacity 0.5s;
-  border: 1px solid ${({ theme }) => theme.colors.white};
-  border-radius: 24px;
 
-  &:hover {
-    opacity: 0.7;
+  &.active {
+    border: 1px solid ${({ theme }) => theme.colors.white};
+    border-radius: 24px;
   }
 `;

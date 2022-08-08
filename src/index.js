@@ -1,5 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Normalize } from "styled-normalize";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./App/GlobalStyle";
+import { theme } from "./App/theme";
 import { App } from "./App/index";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
@@ -9,7 +13,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ThemeProvider theme={theme}>
+        <Normalize />
+        <GlobalStyle />
+        <App />
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );
