@@ -20,48 +20,57 @@ import {
   Description,
 } from "./styled";
 
-export const MovieDetail = () => {
+import { APIPhotoUrl } from "../../App/API";
+
+export const MovieDetail = ({
+  poster,
+  title,
+  release,
+  countries,
+  genres,
+  rate,
+  count,
+  description,
+}) => {
   return (
     <Wrapper>
-      <Poster
-        src="https://i.ibb.co/ZWTvJ2j/poster.png" /*póki co image z url i bez responsywności mobilnej, jak będzie api to to zmienię*/
-        alt="poster"
-      />
+      <Poster src={`${APIPhotoUrl}w342/${poster}`} alt="poster" />
       <InfoWrapper>
-        <Title>Mulan</Title>
-        <Year>2020</Year>
+        <Title>{title}</Title>
+        <Year>{release ? release.slice(0, 4) : ""}</Year>
 
         <SectionWrapper>
           <Section>
             <Production>Production:</Production>
-            <Country>China, USA</Country>
+            {countries &&
+              countries.map((country) => (
+                <Country key={country.iso_3166_1}>
+                  {country.name}
+                  {", "}
+                </Country>
+              ))}
           </Section>
           <Section>
             <RlsDate>Release date:</RlsDate>
-            <Date>24.10.2020</Date>
+            <Date>{release}</Date>
           </Section>
         </SectionWrapper>
 
         <GenresWrapper>
-          <Genre>Action</Genre>
-          <Genre>Adventure</Genre>
-          <Genre>Drama</Genre>
+          {genres &&
+            genres.map((genre) => <Genre key={genre.id}>{genre.name}</Genre>)}
         </GenresWrapper>
 
         <Rating>
           <Icon />
           <Rate>
-            7,8<Span>/ 10</Span>
+            {rate}
+            <Span>/ 10</Span>
           </Rate>
-          <Votes>335 votes</Votes>
+          <Votes>{count} votes</Votes>
         </Rating>
       </InfoWrapper>
-      <Description>
-        A young Chinese maiden disguises herself as a male warrior in order to
-        save her father. Disguises herself as a male warrior in order to save
-        her father. A young Chinese maiden disguises herself as a male warrior
-        in order to save her father.
-      </Description>
+      <Description>{description}</Description>
     </Wrapper>
   );
 };

@@ -32,10 +32,17 @@ export const Wrapper = styled.section`
 
 export const Poster = styled.img`
   grid-area: poster;
+  border-radius: ${({ theme }) => theme.borderRadiusSmall};
+  max-width: 312px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    max-width: 92%;
+    max-height: 92%;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 114px;
-    height: 169px;
+    max-width: 114px;
+    max-height: 169px;
   } ;
 `;
 

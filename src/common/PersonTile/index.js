@@ -1,11 +1,14 @@
+import { APIPhotoUrl } from "../../App/API";
 import { Tile, Image, Name, Role } from "./styled";
+import noPersonPhoto from "./noPersonPhoto.svg";
 
-export const PersonTile = ({ name, role }) => {
+export const PersonTile = ({ name, role, photo }) => {
+  const image = `${APIPhotoUrl}w185${photo}`;
   return (
     <Tile>
-      <Image src="https://i.ibb.co/QHf40YG/poster-1.png" alt="" />
-      <Name>{name ? name : "test name"}</Name>
-      <Role>{role ? role : "test role"}</Role>
+      <Image src={photo ? image : noPersonPhoto} alt={name} />
+      <Name>{name}</Name>
+      <Role>{role}</Role>
     </Tile>
   );
 };
