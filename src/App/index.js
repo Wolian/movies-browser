@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { MoviePage } from "../features/movies/MoviePage";
 import { MovieList } from "../features/movies/MovieList";
+import { PeopleList } from "../features/people/PeopleList";
 import Navigation from "../common/Navigation";
 
 export const App = () => {
@@ -10,6 +11,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<MovieList />} />
         <Route path="/movies" element={<MovieList />} />
+        <Route path="/people" element={<PeopleList />} />
         <Route path="/moviepage/:id" element={<MoviePage />} />
       </Routes>
     </HashRouter>

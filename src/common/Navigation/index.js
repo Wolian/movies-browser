@@ -30,7 +30,7 @@ const Navigation = () => (
               <Link to="/movies">MOVIES</Link>
             </Item>
             <Item>
-              <Link to="/moviepage">PEOPLE</Link>
+              <Link to="/people">PEOPLE</Link>
             </Item>
           </List>
         </Menu>
