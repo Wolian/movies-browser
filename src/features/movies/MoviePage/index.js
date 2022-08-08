@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MoviePeople } from "../../../common/MoviePeople";
 import { MoviePoster } from "./MoviePoster";
-import { MovieTile } from "../../../common/MovieTile";
+import { MovieDetail } from "../../../common/MovieDetail";
 import { Container } from "./styled";
 import {
   fetchMovies,
@@ -30,7 +30,7 @@ export const MoviePage = () => {
         count={movies.vote_count}
       />
       <Container>
-        <MovieTile
+        <MovieDetail
           poster={movies.poster_path}
           title={movies.title}
           release={movies.release_date}

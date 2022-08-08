@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Wrapper = styled.section`
   max-width: 1368px;
-  //width: 100%;
   margin: 64px auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -55,18 +54,16 @@ export const Tile = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px;
+    border-radius: ${({ theme }) => theme.borderRadiusSmall};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 8px;
-    flex-direction: column;
-    gap: 8px;
-    border-radius: ${({ theme }) => theme.borderRadiusSmall};
   }
 `;
 
 export const Image = styled.img`
-  max-width: 177px;
+  width: 100%;
   border-radius: ${({ theme }) => theme.borderRadiusSmall};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
