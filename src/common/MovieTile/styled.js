@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const TileWrapper = styled.div`
   display: flex;
@@ -44,6 +45,15 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.woodSmoke};
   @media (max-width: 644px) {
     font-size: 16px;
+  }
+`;
+
+export const MovieLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.woodSmoke};
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 `;
 

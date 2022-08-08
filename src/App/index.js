@@ -10,7 +10,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<MovieList />} />
         <Route path="/movies" element={<MovieList />} />
-        <Route path="/moviepage" element={<MoviePage />} />
+        <Route path="/moviepage/:id" element={<MoviePage />} />
       </Routes>
     </HashRouter>
   );

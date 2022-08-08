@@ -5,6 +5,7 @@ const moviesSlice = createSlice({
   initialState: {
     movies: [],
     people: [],
+    id: 0,
   },
   reducers: {
     fetchMovies: () => {},
