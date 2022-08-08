@@ -20,7 +20,7 @@ import {
   Description,
 } from "./styled";
 
-export const MovieTile = () => {
+export const MovieDetail = () => {
   return (
     <Wrapper>
       <Poster

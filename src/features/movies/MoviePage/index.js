@@ -1,6 +1,6 @@
-import { MovieCast } from "./MovieCast";
+import { MoviePeople } from "./MoviePeople";
 import { MoviePoster } from "./MoviePoster";
-import { MovieTile } from "./MovieTile";
+import { MovieDetail } from "../../../common/MovieDetail";
 import { Container } from "./styled";
 import Pagination from "../../../common/Pagination";
 
@@ -9,8 +9,9 @@ export const MoviePage = () => {
     <>
       <MoviePoster />
       <Container>
-        <MovieTile />
-        <MovieCast />
+        <MovieDetail />
+        <MoviePeople title={"Cast"} />
+        <MoviePeople title={"Crew"} />
         <Pagination />
       </Container>
     </>

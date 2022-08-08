@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as StarIcon } from "../Vector.svg";
+import { ReactComponent as StarIcon } from "../../features/movies/MoviePage/Vector.svg";
 
 export const Wrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.white};
@@ -16,7 +16,7 @@ export const Wrapper = styled.section`
   box-shadow: ${({ theme }) => theme.boxShadow};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    margin: 21px 16px;
+    margin: 21px 0;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -26,7 +26,7 @@ export const Wrapper = styled.section`
       "description description";
     padding: 16px;
     gap: 16px;
-    margin: 16px 16px 0px 16px;
+    margin: 16px 0;
   } ;
 `;
 
