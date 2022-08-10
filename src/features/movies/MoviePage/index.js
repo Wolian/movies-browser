@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { MoviePeople } from "../../../common/MoviePeople";
 import { MoviePoster } from "./MoviePoster";
 import { MovieDetail } from "../../../common/MovieDetail";
@@ -12,14 +13,16 @@ import {
 } from "../moviesSlice";
 
 export const MoviePage = () => {
+  const { id } = useParams();
+
   const dispatch = useDispatch();
   const movies = useSelector(selectMovies);
   const people = useSelector(selectPeople);
 
   useEffect(() => {
-    dispatch(fetchMovies());
-    dispatch(fetchPeople());
-  }, [dispatch]);
+    dispatch(fetchMovies(id));
+    dispatch(fetchPeople(id));
+  }, [id, dispatch]);
 
   return (
     <>
