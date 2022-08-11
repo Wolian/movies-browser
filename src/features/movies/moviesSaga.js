@@ -12,22 +12,19 @@ import {
   setGenres,
 } from "./moviesSlice";
 
-function* fetchMoviesHandler() {
+function* fetchMoviesHandler({ payload: id }) {
   try {
-    const movies = yield axios.get(
-      `${APIUrl}movie/550?api_key=${APIKey}`
-      //"https://api.themoviedb.org/3/search/movie?api_key=4637368ad2293e793c00648491a244a5&query=Mulan"
-    );
+    const movies = yield axios.get(`${APIUrl}movie/${id}?api_key=${APIKey}`);
     yield put(setMovies(movies.data));
   } catch (error) {
     yield console.log("error", error);
   }
 }
 
-function* fetchPeopleHandler() {
+function* fetchPeopleHandler({ payload: id }) {
   try {
     const people = yield axios.get(
-      `${APIUrl}movie/550/credits?api_key=${APIKey}&language=en-US`
+      `${APIUrl}movie/${id}/credits?api_key=${APIKey}&language=en-US`
     );
     yield put(setPeople(people.data));
   } catch (error) {

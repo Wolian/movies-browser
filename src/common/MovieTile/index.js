@@ -2,6 +2,7 @@ import {
   Image,
   Description,
   Title,
+  MovieLink,
   Year,
   Tags,
   Tag,
@@ -23,13 +24,18 @@ export const MovieTile = ({
   votes,
   genres,
   movieGenre,
+  id,
 }) => {
   return (
     <TileWrapper>
-      <Image src={`${APIPhotoUrl}w500${poster}`} alt="" />
+      <MovieLink to={`/moviepage/${id}`}>
+        <Image src={`${APIPhotoUrl}w500${poster}`} alt="" />
+      </MovieLink>
       <Content>
         <Description>
-          <Title>{title}</Title>
+          <Title>
+            <MovieLink to={`/moviepage/${id}`}>{title}</MovieLink>
+          </Title>
           <Year>{release ? release.slice(0, 4) : ""}</Year>
           <Tags>
             {genres.map(
