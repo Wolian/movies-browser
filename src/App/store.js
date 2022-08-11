@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import moviesReducer from "../features/movies/moviesSlice";
 import rootSaga from "./rootSaga";
+import peopleReducer from "../features/people/peopleSlice";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -11,6 +12,7 @@ const store = configureStore({
     people: moviesReducer,
     popularMovies: moviesReducer,
     genres: moviesReducer,
+    popularPeople: peopleReducer,
   },
   middleware: [sagaMiddleware],
 });
