@@ -35,7 +35,7 @@ function* fetchPeopleHandler({ payload: id }) {
 function* fetchPopularMoviesHandler() {
   try {
     const popularMovies = yield axios.get(
-      `${APIUrl}movie/popular/?api_key=${APIKey}&language=en-US&page=1/`
+      `${APIUrl}movie/popular?api_key=${APIKey}&language=en-US&page=1/`
     );
     yield put(setPopularMovies(popularMovies.data));
   } catch (error) {
