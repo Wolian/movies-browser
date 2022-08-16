@@ -3,6 +3,7 @@ import { MoviePage } from "../features/movies/MoviePage";
 import { MovieList } from "../features/movies/MovieList";
 import { PeopleList } from "../features/people/PeopleList";
 import Navigation from "../common/Navigation";
+import ErrorPage from "../common/ErrorPage";
 
 export const App = () => {
   return (
@@ -13,6 +14,7 @@ export const App = () => {
         <Route path="/movies" element={<MovieList />} />
         <Route path="/people" element={<PeopleList />} />
         <Route path="/moviepage/:id" element={<MoviePage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </HashRouter>
   );

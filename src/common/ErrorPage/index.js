@@ -1,4 +1,12 @@
-import { Wrapper, Icon, Span, Header, Text, Paragaph, Button } from "./styled";
+import {
+  Wrapper,
+  Icon,
+  Span,
+  Header,
+  Text,
+  Paragaph,
+  ButtonLink,
+} from "./styled";
 
 const ErrorPage = () => {
   return (
@@ -13,7 +21,7 @@ const ErrorPage = () => {
           and try again
         </Paragaph>
       </Text>
-      <Button>Back to home page</Button>
+      <ButtonLink to="/">Back to home page</ButtonLink>
     </Wrapper>
   );
 };
