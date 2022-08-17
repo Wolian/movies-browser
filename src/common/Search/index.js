@@ -21,8 +21,10 @@ const Search = () => {
     if (target.value.trim() === "") {
       searchParams.delete(searchQueryParamName);
     } else {
-      searchParams.get(searchQueryParamName, target.value);
+      searchParams.set(searchQueryParamName, target.value);
     }
+
+    console.log(searchParams);
 
     navigate(`${locationPathName}?${searchParams.toString()}`);
   };
