@@ -24,9 +24,10 @@ const Search = () => {
       searchParams.set(searchQueryParamName, target.value);
     }
 
-    console.log(searchParams);
-
-    navigate(`${locationPathName}?${searchParams.toString()}`);
+    navigate({
+      pathname: "/results",
+      search: `?${searchParams}`,
+    });
   };
 
   return (
