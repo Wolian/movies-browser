@@ -25,7 +25,7 @@ const Search = () => {
     }
 
     navigate({
-      pathname: "/results",
+      pathname: "/search",
       search: `?${searchParams}`,
     });
   };
