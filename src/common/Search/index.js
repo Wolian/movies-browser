@@ -1,5 +1,8 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { searchQueryParamName } from "../../features/SearchResult/searchQueryParamName";
+import {
+  searchQueryParamName,
+  searchTypePage,
+} from "../../features/SearchResult/searchNameValue";
 import { Wrapper, IconSearch, Input } from "./styled";
 import searchIcon from "./search.svg";
 
@@ -9,7 +12,12 @@ const Search = () => {
   let navigate = useNavigate();
 
   let typePage = locationPathName.split("/")[1];
-  if (typePage === "" || (typePage !== "movies" && typePage !== "people")) {
+  if (typePage === "search") {
+    typePage = new URLSearchParams(location.search).get(searchTypePage);
+  } else if (
+    typePage === "" ||
+    (typePage !== "movies" && typePage !== "people")
+  ) {
     typePage = "movies";
   }
 
@@ -19,8 +27,10 @@ const Search = () => {
     const searchParams = new URLSearchParams(location.search);
 
     if (target.value.trim() === "") {
+      searchParams.delete(searchTypePage);
       searchParams.delete(searchQueryParamName);
     } else {
+      searchParams.set(searchTypePage, typePage);
       searchParams.set(searchQueryParamName, target.value);
     }
 
