@@ -9,11 +9,14 @@ export const useTypePage = () => {
   switch (typePage) {
     case "search":
       typePage = new URLSearchParams(location.search).get(searchTypePage);
+      console.log(typePage);
       break;
-    case ("movies", "moviepage"):
+    case "movies":
+    case "moviepage":
       typePage = "movies";
       break;
-    case ("people", "personpage"):
+    case "people":
+    case "personpage":
       typePage = "people";
       break;
     default:

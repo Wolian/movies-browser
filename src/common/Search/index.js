@@ -3,17 +3,16 @@ import {
   searchQueryParamName,
   searchTypePage,
 } from "../../features/SearchResult/searchNameValue";
-import { useTypePage } from "./useTypePage";
 import { Wrapper, IconSearch, Input } from "./styled";
 import searchIcon from "./search.svg";
+import { useTypePage } from "./useTypePage";
 
 const Search = () => {
   const location = useLocation();
+  const typePage = useTypePage();
   let navigate = useNavigate();
 
   const query = new URLSearchParams(location.search).get(searchQueryParamName);
-
-  const typePage = useTypePage();
 
   const onInputChanged = ({ target }) => {
     const searchParams = new URLSearchParams(location.search);
