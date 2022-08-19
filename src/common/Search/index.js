@@ -3,9 +3,9 @@ import {
   searchQueryParamName,
   searchTypePage,
 } from "../../features/SearchResult/searchNameValue";
+import { useTypePage } from "./useTypePage";
 import { Wrapper, IconSearch, Input } from "./styled";
 import searchIcon from "./search.svg";
-import { useTypePage } from "./useTypePage";
 
 const Search = () => {
   const location = useLocation();
