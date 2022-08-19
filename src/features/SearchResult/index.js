@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { searchQueryParamName, searchTypePage } from "./searchNameValue";
 import ErrorPage from "../../common/ErrorPage";
+import { NoResultsPage } from "../../common/NoResultsPage";
 import { Wrapper } from "./styled";
 
 export const SearchResult = () => {
@@ -32,6 +33,10 @@ export const SearchResult = () => {
       break;
     default:
       content = <ErrorPage />;
+  }
+
+  if (query === null) {
+    content = <NoResultsPage />;
   }
 
   for (const keyUrl of keysUrl) {

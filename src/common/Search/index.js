@@ -27,7 +27,6 @@ const Search = () => {
     const searchParams = new URLSearchParams(location.search);
 
     if (target.value.trim() === "") {
-      searchParams.delete(searchTypePage);
       searchParams.delete(searchQueryParamName);
     } else {
       searchParams.set(searchTypePage, typePage);
