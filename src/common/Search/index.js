@@ -3,25 +3,17 @@ import {
   searchQueryParamName,
   searchTypePage,
 } from "../../features/SearchResult/searchNameValue";
+import { useTypePage } from "./useTypePage";
 import { Wrapper, IconSearch, Input } from "./styled";
 import searchIcon from "./search.svg";
 
 const Search = () => {
   const location = useLocation();
-  const locationPathName = location.pathname;
   let navigate = useNavigate();
 
-  let typePage = locationPathName.split("/")[1];
-  if (typePage === "search") {
-    typePage = new URLSearchParams(location.search).get(searchTypePage);
-  } else if (
-    typePage === "" ||
-    (typePage !== "movies" && typePage !== "people")
-  ) {
-    typePage = "movies";
-  }
-
   const query = new URLSearchParams(location.search).get(searchQueryParamName);
+
+  const typePage = useTypePage();
 
   const onInputChanged = ({ target }) => {
     const searchParams = new URLSearchParams(location.search);
