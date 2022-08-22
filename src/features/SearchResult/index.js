@@ -2,14 +2,14 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { searchQueryParamName, searchTypePage } from "./searchNameValue";
-import { fetchSearch, selectSearch } from "./searchSlice";
+import { fetchSearch, selectSearchState } from "./searchSlice";
 import ErrorPage from "../../common/ErrorPage";
 import { NoResultsPage } from "../../common/NoResultsPage";
 import { Wrapper } from "./styled";
 
 export const SearchResult = () => {
   const dispatch = useDispatch();
-  const showSearch = useSelector(selectSearch);
+  const showSearch = useSelector(selectSearchState);
   console.log(showSearch);
 
   const location = useLocation();
