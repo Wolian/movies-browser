@@ -1,12 +1,14 @@
 import axios from "axios";
-import { takeEvery } from "redux-saga/effects";
+import { put, takeEvery } from "redux-saga/effects";
+import { fetchSearch, setSearch } from "./searchSlice";
 import { APIKey, APIUrl } from "../../App/API";
 
-import { fetchSearch } from "./searchSlice";
-
-function* fetchSearchHandler({ payload: query }) {
+function* fetchSearchHandler({ payload: dataSearch }) {
   try {
-    console.log(query);
+    const search = yield axios.get(
+      `${APIUrl}search/${dataSearch.typePage}?api_key=${APIKey}&language=en-US&query=${dataSearch.query}`
+    );
+    yield put(setSearch(search.data));
   } catch {
     console.log("Błąd");
   }
