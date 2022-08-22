@@ -10,16 +10,16 @@ export const useTypePage = () => {
     case "search":
       typePage = new URLSearchParams(location.search).get(searchTypePage);
       break;
-    case "movies":
+    case "movie":
     case "moviepage":
       typePage = "movies";
       break;
-    case "people":
+    case "person":
     case "personpage":
-      typePage = "people";
+      typePage = "person";
       break;
     default:
-      typePage = "movies";
+      typePage = "movie";
   }
 
   return typePage;
