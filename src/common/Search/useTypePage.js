@@ -9,7 +9,6 @@ export const useTypePage = () => {
   switch (typePage) {
     case "search":
       typePage = new URLSearchParams(location.search).get(searchTypePage);
-      console.log(typePage);
       break;
     case "movies":
     case "moviepage":
