@@ -1,30 +1,32 @@
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { searchQueryParamName, searchTypePage } from "./searchNameValue";
-import { fetchSearch } from "./searchSlice";
+import { fetchSearch, selectSearch } from "./searchSlice";
 import ErrorPage from "../../common/ErrorPage";
 import { NoResultsPage } from "../../common/NoResultsPage";
 import { Wrapper } from "./styled";
-import { useEffect } from "react";
 
 export const SearchResult = () => {
   const dispatch = useDispatch();
+  const showSearch = useSelector(selectSearch);
+  console.log(showSearch);
 
   const location = useLocation();
   const urlParams = new URLSearchParams(location.search);
 
   const query = urlParams.get(searchQueryParamName);
-  const type = urlParams.get(searchTypePage);
+  const typePage = urlParams.get(searchTypePage);
   const keysUrl = urlParams.keys();
 
   useEffect(() => {
-    dispatch(fetchSearch(query));
-  }, [query]);
+    dispatch(fetchSearch({ query: query, typePage: typePage }));
+  }, [query, typePage, dispatch]);
 
   let content = "";
 
-  switch (type) {
-    case "movies":
+  switch (typePage) {
+    case "movie":
       content = (
         <div>
           <h1>Search result for "{query}"</h1>
@@ -32,7 +34,7 @@ export const SearchResult = () => {
         </div>
       );
       break;
-    case "people":
+    case "person":
       content = (
         <div>
           <h1>Search result for "{query}"</h1>
