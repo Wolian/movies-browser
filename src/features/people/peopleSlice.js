@@ -10,7 +10,7 @@ const peopleSlice = createSlice({
         setPopularPeople: (state, { payload: popularPeople }) => {
             state.popularPeople = popularPeople;
         },
-        fetchPeople: () => { },
+        fetchPeopleCrewCast: () => { },
         setPeopleCrewCast: (state, { payload: peopleCrewCast }) => {
             state.people = peopleCrewCast;
         },
