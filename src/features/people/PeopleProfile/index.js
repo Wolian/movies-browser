@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Wrapper } from "./styled";
+import { Wrapper, Container } from "./styled";
 import { fetchPopularPeople, selectPopularPeople } from "../peopleSlice";
-import { MovieDetail } from "../../../common/MovieDetail";
-import { MoviePeople } from "../../../common/MoviePeople";
+import { PersonDetail } from "../../../common/PersonDetail";
+// import { MoviePeople } from "../../../common/MoviePeople";
 
 
-export const PeopleList = () => {
-  const { id } = useParams();
+export const PeopleProfile = () => {
+  
 
   const dispatch = useDispatch();
   const people = useSelector(selectPopularPeople);
@@ -19,15 +19,15 @@ export const PeopleList = () => {
   return (
     <Wrapper>
       <Container>
-        <MovieDetail
-          poster={movies.poster_path}
-          title={movies.title}
-          release={movies.release_date}
-          countries={movies.production_countries}
-          description={movies.overview}
+        <PersonDetail
+          poster={people.profile_path}
+          name={people.name}
+          birthDate={people.birthday}
+          birthPlace={people.place_of_birth}
+          biography={people.biography}
         />
-        <MoviePeople title={"Cast"} items={people.cast} />
-        <MoviePeople title={"Crew"} items={people.crew} />
+        {/* <MoviePeople title={"Movies-cast"} items={people.cast} />
+        <MoviePeople title={"Movies-crew"} items={people.crew} /> */}
       </Container>
     </Wrapper>
   );
