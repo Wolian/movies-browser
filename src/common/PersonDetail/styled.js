@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Wrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.white};
   max-width: 1368px;
-  //width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-areas:
@@ -33,16 +32,6 @@ export const Poster = styled.img`
   grid-area: poster;
   border-radius: ${({ theme }) => theme.borderRadiusSmall};
   max-width: 312px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    max-width: 92%;
-    max-height: 92%;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    max-width: 114px;
-    max-height: 169px;
-  } ;
 `;
 
 export const InfoWrapper = styled.div`
@@ -62,17 +51,15 @@ export const InfoWrapper = styled.div`
 export const Name = styled.h1`
   font-size: 36px;
   font-weight: 600;
-  line-height: 120%;
+  line-height: 1.2;
   margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-weight: 500;
     font-size: 4.5vw;
-    line-height: 130%;
+    line-height: 1.3;
   } ;
 `;
-
-
 
 export const SectionBirth = styled.div`
   display: flex;
@@ -80,7 +67,7 @@ export const SectionBirth = styled.div`
   gap: 8px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-weight: 400;
-    line-height: 130%;
+    line-height: 1.3;
   } ;
 `;
 
@@ -92,7 +79,7 @@ export const Section = styled.div`
   gap: 10px;
   font-weight: 400;
   font-size: 18px;
-  line-height: 120%;
+  line-height: 1.2;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 12px;
@@ -114,7 +101,7 @@ export const Date = styled.span`
 export const Span = styled.span`
   font-weight: 400;
   font-size: 14px;
-  line-height: 120%;
+  line-height: 1.2;
   margin-left: 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -122,19 +109,17 @@ export const Span = styled.span`
   } ;
 `;
 
-
-
 export const Biography = styled.div`
   grid-area: description;
   font-weight: 400;
   font-size: 20px;
-  line-height: 160%;
+  line-height: 1.6;
   color: ${({ theme }) => theme.colors.black};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-weight: 400;
     font-size: 14px;
-    line-height: 160%;
+    line-height: 1.6;
     word-wrap: break-word;
   } ;
 `;
