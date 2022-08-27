@@ -26,12 +26,7 @@ export const SearchResult = () => {
     dispatch(fetchSearch({ query: query, typePage: typePage }));
   }, [query, typePage, dispatch]);
 
-  let render = (
-    <>
-      {showResults}
-      <Pagination />
-    </>
-  );
+  let render = showResults;
 
   if (query === null) {
     render = <NoResultsPage />;
