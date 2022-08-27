@@ -12,7 +12,6 @@ import { Wrapper } from "./styled";
 export const SearchResult = () => {
   const dispatch = useDispatch();
   const results = useSelector(selectResultsState);
-  const error = <ErrorPage />;
 
   const location = useLocation();
   const urlParams = new URLSearchParams(location.search);
@@ -21,7 +20,7 @@ export const SearchResult = () => {
   const typePage = urlParams.get(searchTypePage);
   const keysUrl = urlParams.keys();
 
-  const { showResults } = useShowResultSearch(query, typePage, results, error);
+  const { showResults } = useShowResultSearch(query, typePage, results);
 
   useEffect(() => {
     dispatch(fetchSearch({ query: query, typePage: typePage }));
@@ -40,7 +39,7 @@ export const SearchResult = () => {
 
   for (const keyUrl of keysUrl) {
     if (keyUrl !== searchTypePage && keyUrl !== searchQueryParamName) {
-      render = error;
+      render = <ErrorPage />;
     }
   }
 
