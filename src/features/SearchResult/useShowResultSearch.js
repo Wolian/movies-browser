@@ -1,10 +1,10 @@
 import { MovieTile } from "../../common/MovieTile";
 import { PersonTile } from "../../common/PersonTile";
 import ErrorPage from "../../common/ErrorPage";
+import Pagination from "../../common/Pagination";
 import { ContainerMovie, ContainerPerson } from "./styled";
 
-export const useShowResultSearch = (query, typePage, results, error) => {
-  // console.log(typePage);
+export const useShowResultSearch = (query, typePage, results) => {
   let showResults = "";
 
   switch (typePage) {
@@ -27,6 +27,7 @@ export const useShowResultSearch = (query, typePage, results, error) => {
               />
             ))}
           </ContainerMovie>
+          <Pagination />
         </div>
       );
       break;
@@ -43,6 +44,7 @@ export const useShowResultSearch = (query, typePage, results, error) => {
               />
             ))}
           </ContainerPerson>
+          <Pagination />
         </div>
       );
       break;

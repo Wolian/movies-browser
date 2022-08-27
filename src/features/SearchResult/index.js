@@ -5,7 +5,6 @@ import { searchQueryParamName, searchTypePage } from "./searchNameValue";
 import { useShowResultSearch } from "./useShowResultSearch";
 import { fetchSearch, selectResultsState } from "./searchSlice";
 import ErrorPage from "../../common/ErrorPage";
-import Pagination from "../../common/Pagination";
 import { NoResultsPage } from "../../common/NoResultsPage";
 import { Wrapper } from "./styled";
 
