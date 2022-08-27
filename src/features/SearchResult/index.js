@@ -12,7 +12,7 @@ import { Wrapper } from "./styled";
 export const SearchResult = () => {
   const dispatch = useDispatch();
   const results = useSelector(selectResultsState);
-  const error = ErrorPage;
+  const error = <ErrorPage />;
 
   const location = useLocation();
   const urlParams = new URLSearchParams(location.search);

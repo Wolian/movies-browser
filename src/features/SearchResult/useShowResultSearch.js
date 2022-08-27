@@ -1,5 +1,6 @@
 import { MovieTile } from "../../common/MovieTile";
 import { PersonTile } from "../../common/PersonTile";
+import ErrorPage from "../../common/ErrorPage";
 import { ContainerMovie, ContainerPerson } from "./styled";
 
 export const useShowResultSearch = (query, typePage, results, error) => {
@@ -46,7 +47,7 @@ export const useShowResultSearch = (query, typePage, results, error) => {
       );
       break;
     default:
-      showResults = error;
+      showResults = <ErrorPage />;
   }
 
   return { showResults };
