@@ -13,7 +13,8 @@ const searchSlice = createSlice({
   },
 });
 
-export const selectSearchState = (state) => state.resultSearch;
+export const selectSearchState = (state) => state.search.resultSearch;
+export const selectResultsState = (state) => selectSearchState(state).results;
 
 export const { fetchSearch, setSearch } = searchSlice.actions;
 
