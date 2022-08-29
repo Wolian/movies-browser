@@ -4,6 +4,8 @@ import { APIKey, APIUrl } from "../../App/API";
 import {
   fetchPopularPeople,
   setPopularPeople,
+  fetchPersonDetail,
+  setPersonDetail,
   fetchPeopleCrewCast,
   setPeopleCrewCast,
 } from "./peopleSlice";
@@ -14,6 +16,17 @@ function* fetchPopularPeopleHandler() {
       `${APIUrl}person/popular?api_key=${APIKey}`
     );
     yield put(setPopularPeople(popularPeople.data.results));
+  } catch (error) {
+    yield console.log("error", error);
+  }
+}
+
+function* fetchPersonDetailHandler({ payload:id }) {
+  try {
+    const personDetail = yield axios.get(
+      `${APIUrl}person/${id}?api_key=${APIKey}`
+    );
+    yield put(setPersonDetail(personDetail.data));
   } catch (error) {
     yield console.log("error", error);
   }
@@ -33,4 +46,5 @@ function* fetchPeopleHandlerCrewCast({ payload: id }) {
 export function* popularPeopleSaga() {
   yield takeEvery(fetchPopularPeople.type, fetchPopularPeopleHandler);
   yield takeEvery(fetchPeopleCrewCast.type, fetchPeopleHandlerCrewCast);
+  yield takeEvery(fetchPersonDetail.type, fetchPersonDetailHandler);
 }
