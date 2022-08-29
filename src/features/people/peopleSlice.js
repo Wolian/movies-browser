@@ -28,7 +28,7 @@ export const selectPersonDetailState = (state) => state.personDetail;
 
 export const selectPopularPeople = (state) => selectPopularPeopleState(state).popularPeople;
 export const selectPeopleCrewCast = (state) => selectPeopleCrewCastState(state).peopleCrewCast;
-export const selectPersonDetail = (state) => selectPersonDetail(state).personDetail;
+export const selectPersonDetail = (state) => selectPersonDetailState(state).personDetail;
 
 export const {
     fetchPopularPeople,
