@@ -10,6 +10,7 @@ import {
 } from "./styled";
 
 import { APIPhotoUrl } from "../../App/API";
+import noImgPoster from "../../common/PersonTile/noPersonPhoto.svg";
 
 export const PersonDetail = ({
     poster,
@@ -18,15 +19,15 @@ export const PersonDetail = ({
     birthPlace,
     birthDate,
 }) => {
-    console.log(poster);
     return (
         <Wrapper>
-            <Poster src={`${APIPhotoUrl}w342/${poster}`} alt="poster" />
+            <Poster src={poster !== null ? `${APIPhotoUrl}w342/${poster}` : noImgPoster}
+                alt="poster" />
             <InfoWrapper>
                 <Name>{name}</Name>
                 <SectionBirth>
-                    <Birth>Date of birth:  <Date>{birthDate}</Date>  </Birth>
-                    <Birth>Place of birth: <Date>{birthPlace}</Date> </Birth>
+                    <Birth>Date of birth:  <Date>{birthDate !== null ? birthDate : "no information"}</Date>  </Birth>
+                    <Birth>Place of birth: <Date>{birthDate !== null ? birthPlace : "no information"}</Date> </Birth>
                 </SectionBirth>
             </InfoWrapper>
             <Biography>{biography}</Biography>
