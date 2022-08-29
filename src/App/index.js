@@ -13,7 +13,7 @@ export const App = () => {
       <Route path="/" element={<MovieList />} />
       <Route path="/movies" element={<MovieList />} />
       <Route path="/people" element={<PeopleList />} />
-      <Route path="/peopleprofile" element={<PeopleProfile />} />
+      <Route path="/peopleprofile/:id" element={<PeopleProfile />} />
       <Route path="/moviepage/:id" element={<MoviePage />} />
     </Routes>
   </HashRouter>
