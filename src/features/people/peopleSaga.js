@@ -11,9 +11,9 @@ import {
 function* fetchPopularPeopleHandler() {
   try {
     const popularPeople = yield axios.get(
-      `${APIUrl}person/1281?api_key=${APIKey}`
+      `${APIUrl}person/popular?api_key=${APIKey}`
     );
-    yield put(setPopularPeople(popularPeople.data));
+    yield put(setPopularPeople(popularPeople.data.results));
   } catch (error) {
     yield console.log("error", error);
   }
