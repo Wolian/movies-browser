@@ -6,7 +6,7 @@ export const MoviePeople = ({ title, items }) => {
     <Wrapper>
       <Header>{title}</Header>
       <Container>
-        {items.map((item) => (
+        {items?.map((item) => (
           <PersonTile
             key={item.id}
             personId={item.id}
