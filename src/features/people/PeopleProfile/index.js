@@ -5,7 +5,6 @@ import { Wrapper } from "./styled";
 import { fetchPersonDetail, selectPersonDetail } from "../peopleSlice";
 import { PersonDetail } from "../../../common/PersonDetail";
 
-
 export const PeopleProfile = () => {
   
   const { id } = useParams();
