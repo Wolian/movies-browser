@@ -10,7 +10,6 @@ function* fetchSearchHandler({ payload: dataSearch }) {
       `${APIUrl}search/${dataSearch.typePage}?api_key=${APIKey}&language=en-US&query=${dataSearch.query}`
     );
     yield put(setSearch(search.data));
-    console.log(search.data);
   } catch {
     console.log("Błąd");
   }
