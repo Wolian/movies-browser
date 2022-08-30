@@ -3,15 +3,20 @@ import { PersonTile } from "../../common/PersonTile";
 import ErrorPage from "../../common/ErrorPage";
 import Pagination from "../../common/Pagination";
 import { ContainerMovie, ContainerPerson } from "./styled";
+import { useSelector } from "react-redux";
+import { selectTotalResults } from "./searchSlice";
 
 export const useShowResultSearch = (query, typePage, results) => {
+  const totalResults = useSelector(selectTotalResults);
   let showResults = "";
 
   switch (typePage) {
     case "movie":
       showResults = (
         <div>
-          <h1>Search result for "{query}"</h1>
+          <h1>
+            Search result for "{query}" ({totalResults})
+          </h1>
           <ContainerMovie>
             {results?.map((result) => (
               <MovieTile
@@ -34,7 +39,9 @@ export const useShowResultSearch = (query, typePage, results) => {
     case "person":
       showResults = (
         <div>
-          <h1>Search result for "{query}"</h1>
+          <h1>
+            Search result for "{query}" ({totalResults})
+          </h1>
           <ContainerPerson>
             {results?.map((result) => (
               <PersonTile
