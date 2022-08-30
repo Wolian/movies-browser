@@ -35,11 +35,7 @@ export const SearchResult = () => {
 
   switch (loading) {
     case true:
-      render = (
-        <>
-          <h1>Search result for "{query}"</h1> <Loading />
-        </>
-      );
+      render = <Loading title={`Search result for "${query}"`} />;
       break;
     case false:
       render = showResults;
