@@ -1,13 +1,22 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectTotalResults } from "./searchSlice";
+import { fetchGenres, selectGenres } from "../movies/moviesSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { PersonTile } from "../../common/PersonTile";
 import ErrorPage from "../../common/ErrorPage";
 import Pagination from "../../common/Pagination";
 import { ContainerMovie, ContainerPerson } from "./styled";
-import { useSelector } from "react-redux";
-import { selectTotalResults } from "./searchSlice";
 
 export const useShowResultSearch = (query, typePage, results) => {
+  const dispatch = useDispatch();
+  const genres = useSelector(selectGenres);
   const totalResults = useSelector(selectTotalResults);
+
+  useEffect(() => {
+    dispatch(fetchGenres());
+  }, [dispatch]);
+
   let showResults = "";
 
   switch (typePage) {
@@ -25,7 +34,7 @@ export const useShowResultSearch = (query, typePage, results) => {
                 poster={result.poster_path}
                 title={result.title}
                 release={result.release_date}
-                genres={result.genre_ids}
+                genres={genres}
                 movieGenre={result.genre_ids}
                 rate={result.vote_average}
                 votes={result.vote_count}
