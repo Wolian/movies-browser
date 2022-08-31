@@ -1,5 +1,5 @@
 import axios from "axios";
-import { put, takeEvery} from "redux-saga/effects";
+import { put, takeEvery } from "redux-saga/effects";
 import { APIKey, APIUrl } from "../../App/API";
 import {
   fetchPopularPeople,
