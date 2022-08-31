@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { CastSection, CrewSection, Wrapper } from "./styled";
+import { CastCrewSection, Wrapper } from "./styled";
 import { fetchPersonCastCrew, fetchPersonDetail, selectPersonCastCrew, selectPersonDetail } from "../peopleSlice";
 import { PersonDetail } from "../../../common/PersonDetail";
 import { MovieTile } from "../../../common/MovieTile";
+import { fetchGenres, selectGenres } from "../../movies/moviesSlice";
 
 export const PeopleProfile = () => {
 
@@ -12,10 +13,12 @@ export const PeopleProfile = () => {
   const dispatch = useDispatch();
   const person = useSelector(selectPersonDetail);
   const castCrew = useSelector(selectPersonCastCrew);
+  const genres = useSelector(selectGenres);
 
   useEffect(() => {
     dispatch(fetchPersonDetail(id));
     dispatch(fetchPersonCastCrew(id));
+    dispatch(fetchGenres());
   }, [id, dispatch]);
 
   return (
@@ -27,8 +30,8 @@ export const PeopleProfile = () => {
         birthPlace={person.place_of_birth}
         biography={person.biography}
       />
-      <h2>Movies-cast ({castCrew.cast.length})</h2>
-      <CastSection>
+
+      <CastCrewSection>
         {castCrew.cast?.map((cast) => (
           <MovieTile
             key={cast.id}
@@ -36,13 +39,29 @@ export const PeopleProfile = () => {
             poster={cast.poster_path}
             title={cast.title}
             release={cast.release_date}
-            genres={cast.genre_ids}
+            genres={genres}
             movieGenre={cast.genre_ids}
             rate={cast.vote_average}
             votes={cast.vote_count}
           />
         ))}
-      </CastSection>
+      </CastCrewSection>
+
+      <CastCrewSection>
+        {castCrew.crew?.map((crew) => (
+          <MovieTile
+            key={crew.id}
+            id={crew.id}
+            poster={crew.poster_path}
+            title={crew.title}
+            release={crew.release_date}
+            genres={crew.genre_ids}
+            movieGenre={crew.genre_ids}
+            rate={crew.vote_average}
+            votes={crew.vote_count}
+          />
+        ))}
+      </CastCrewSection>
 
     </Wrapper>
   );
