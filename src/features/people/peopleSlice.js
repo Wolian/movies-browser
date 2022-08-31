@@ -5,6 +5,7 @@ const peopleSlice = createSlice({
     initialState: {
         popularPeople: [],
         personDetail: [],
+        personCastCrew: [],
     },
     reducers: {
         fetchPopularPeople: () => { },
@@ -15,28 +16,28 @@ const peopleSlice = createSlice({
         setPersonDetail: (state, {payload: personDetail}) => {
             state.personDetail = personDetail
         },
-        fetchPeopleCrewCast: () => { },
-        setPeopleCrewCast: (state, { payload: peopleCrewCast }) => {
-            state.people = peopleCrewCast;
+        fetchPersonCastCrew: () => { },
+        setPersonCastCrew: (state, {payload: personCastCrew}) => {
+            state.personCastCrew = personCastCrew
         },
     },
 });
 
 export const selectPopularPeopleState = (state) => state.popularPeople;
-export const selectPeopleCrewCastState = (state) => state.people;
 export const selectPersonDetailState = (state) => state.personDetail;
+export const selectPersonCastCrewState = (state) => state.personCastCrew;
 
 export const selectPopularPeople = (state) => selectPopularPeopleState(state).popularPeople;
-export const selectPeopleCrewCast = (state) => selectPeopleCrewCastState(state).peopleCrewCast;
 export const selectPersonDetail = (state) => selectPersonDetailState(state).personDetail;
+export const selectPersonCastCrew = (state) => selectPersonCastCrewState(state).personCastCrew;
 
 export const {
     fetchPopularPeople,
     setPopularPeople,
     fetchPersonDetail,
     setPersonDetail,
-    fetchPeopleCrewCast,
-    setPeopleCrewCast,
+    fetchPersonCastCrew,
+    setPersonCastCrew,
 } = peopleSlice.actions;
 
 export default peopleSlice.reducer;
