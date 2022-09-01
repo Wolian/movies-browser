@@ -30,7 +30,7 @@ export const PeopleProfile = () => {
         birthPlace={person.place_of_birth}
         biography={person.biography}
       />
-
+      <h2>Movies-Cast ({castCrew.cast.length})</h2>
       <CastCrewSection>
         {castCrew.cast?.map((cast) => (
           <MovieTile
@@ -46,7 +46,7 @@ export const PeopleProfile = () => {
           />
         ))}
       </CastCrewSection>
-
+      <h2>Movies-Crew ({castCrew.crew.length})</h2>
       <CastCrewSection>
         {castCrew.crew?.map((crew) => (
           <MovieTile
