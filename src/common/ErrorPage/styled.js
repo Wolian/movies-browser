@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as ErrorIcon } from "./Icon.svg";
 
@@ -29,7 +30,6 @@ export const Header = styled.h1`
   margin: 12px 0 0 0;
   font-weight: 600;
   font-size: 36px;
-  line-height: 120%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 30px;
@@ -50,7 +50,6 @@ export const Text = styled.div`
   text-align: center;
   font-weight: 500;
   font-size: 22px;
-  line-height: 130%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 20px;
@@ -65,10 +64,10 @@ export const Paragaph = styled.p`
   margin: 0;
 `;
 
-export const Button = styled.button`
+export const ButtonLink = styled(Link)`
   font-weight: 700;
   font-size: 14px;
-  line-height: 136%;
+  text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.scienceBlue};
   padding: 16px 24px;
