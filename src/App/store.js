@@ -14,8 +14,9 @@ const store = configureStore({
     popularMovies: moviesReducer,
     genres: moviesReducer,
     popularPeople: peopleReducer,
-    search: searchReduser,
+    personDetail: peopleReducer,
   },
+  
   middleware: [sagaMiddleware],
 });
 sagaMiddleware.run(rootSaga);
