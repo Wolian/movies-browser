@@ -26,6 +26,8 @@ export const selectSearchResults = (state) =>
 export const selectResultsState = (state) => selectSearchResults(state).results;
 export const selectTotalResults = (state) =>
   selectSearchResults(state).total_results;
+export const selectSearchResultsTotalPages = (state) =>
+  selectSearchResults(state).total_pages;
 export const selectLoadingSearch = (state) => selectSearchState(state).loading;
 
 export const { fetchSearch, setSearch, fetchSearchError } = searchSlice.actions;

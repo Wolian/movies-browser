@@ -7,16 +7,22 @@ import {
   fetchSearch,
   selectResultsState,
   selectLoadingSearch,
+  selectSearchResultsTotalPages,
+  selectTotalResults,
 } from "./searchSlice";
 import ErrorPage from "../../common/ErrorPage";
 import Loading from "../../common/Loading";
 import { NoResultsPage } from "../../common/NoResultsPage";
+import { usePageNumber } from "../../common/usePageNumber";
 import { Wrapper } from "./styled";
 
 export const SearchResult = () => {
   const dispatch = useDispatch();
   const results = useSelector(selectResultsState);
   const loading = useSelector(selectLoadingSearch);
+  const totalResults = useSelector(selectTotalResults);
+  const totalPage = useSelector(selectSearchResultsTotalPages);
+  const page = usePageNumber();
 
   const location = useLocation();
   const urlParams = new URLSearchParams(location.search);
@@ -25,11 +31,17 @@ export const SearchResult = () => {
   const typePage = urlParams.get(searchTypePage);
   const keysUrl = urlParams.keys();
 
-  const { showResults } = useShowResultSearch(query, typePage, results);
+  const { showResults } = useShowResultSearch(
+    query,
+    typePage,
+    results,
+    totalPage,
+    totalResults
+  );
 
   useEffect(() => {
-    dispatch(fetchSearch({ query: query, typePage: typePage }));
-  }, [query, typePage, dispatch]);
+    dispatch(fetchSearch({ query: query, typePage: typePage, page: page }));
+  }, [query, typePage, page, dispatch]);
 
   let render = "";
 
@@ -44,12 +56,16 @@ export const SearchResult = () => {
       render = <ErrorPage />;
   }
 
-  if (query === null) {
+  if (query === null || totalResults === 0) {
     render = <NoResultsPage />;
   }
 
   for (const keyUrl of keysUrl) {
-    if (keyUrl !== searchTypePage && keyUrl !== searchQueryParamName) {
+    if (
+      keyUrl !== searchTypePage &&
+      keyUrl !== searchQueryParamName &&
+      keyUrl !== "page"
+    ) {
       render = <ErrorPage />;
     }
   }
