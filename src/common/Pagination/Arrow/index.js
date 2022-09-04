@@ -2,7 +2,7 @@ import arrow from "./arrow.svg";
 import { Img, ImgMobile } from "./styled";
 
 //        States of the arrow
-// active                   rotation
+// active                 rotation
 // false = gray #7E839A     false = left
 // true  = blue #0044CC     true  = right
 
