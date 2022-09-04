@@ -37,6 +37,8 @@ export const selectMovies = (state) => selectMoviesState(state).movies;
 export const selectPeople = (state) => selectPeopleState(state).people;
 export const selectPopularMovies = (state) =>
   selectPopularMoviesState(state).popularMovies;
+export const selectPopularMoviesTotalPages = (state) =>
+  selectPopularMoviesState(state).total_pages;
 export const selectGenres = (state) => selectGenresState(state).genres;
 
 export const {

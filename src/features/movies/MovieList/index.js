@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { usePageNumber } from "../../../common/usePageNumber";
 import { MovieTile } from "../../../common/MovieTile";
 import {
   fetchGenres,
   fetchPopularMovies,
   selectGenres,
   selectPopularMovies,
+  selectPopularMoviesTotalPages,
 } from "../moviesSlice";
 import { Wrapper, Header, Container } from "./styled";
 import Pagination from "../../../common/Pagination";
@@ -13,12 +15,15 @@ import Pagination from "../../../common/Pagination";
 export const MovieList = () => {
   const dispatch = useDispatch();
   const popular = useSelector(selectPopularMovies);
+  const totalPage = useSelector(selectPopularMoviesTotalPages);
   const genres = useSelector(selectGenres);
+  const page = usePageNumber();
 
   useEffect(() => {
-    dispatch(fetchPopularMovies());
+    dispatch(fetchPopularMovies(page));
     dispatch(fetchGenres());
-  }, [dispatch]);
+  }, [page, dispatch]);
+
   return (
     <Wrapper>
       <Header>Popular movies</Header>
@@ -39,7 +44,7 @@ export const MovieList = () => {
             />
           ))}
       </Container>
-      <Pagination />
+      <Pagination totalPage={totalPage} />
     </Wrapper>
   );
 };
