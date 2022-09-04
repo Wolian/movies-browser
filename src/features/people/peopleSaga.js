@@ -3,17 +3,17 @@ import { put, takeEvery } from "redux-saga/effects";
 import { APIKey, APIUrl } from "../../App/API";
 import { fetchPopularPeople, setPopularPeople } from "./peopleSlice";
 
-function* fetchPopularPeopleHandler() {
-    try {
-        const popularPeople = yield axios.get(
-            `${APIUrl}person/popular?api_key=${APIKey}`
-        );
-        yield put(setPopularPeople(popularPeople.data.results));
-    } catch (error) {
-        yield console.log("error", error);
-    }
+function* fetchPopularPeopleHandler({ payload: page }) {
+  try {
+    const popularPeople = yield axios.get(
+      `${APIUrl}person/popular?api_key=${APIKey}&language=en-US&page=${page}`
+    );
+    yield put(setPopularPeople(popularPeople.data));
+  } catch (error) {
+    yield console.log("error", error);
+  }
 }
 
 export function* popularPeopleSaga() {
-    yield takeEvery(fetchPopularPeople.type, fetchPopularPeopleHandler);
+  yield takeEvery(fetchPopularPeople.type, fetchPopularPeopleHandler);
 }

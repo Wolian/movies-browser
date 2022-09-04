@@ -1,23 +1,29 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Wrapper } from "./styled";
+import {
+  fetchPopularPeople,
+  selectPopularPeopleResults,
+  selectPopularPeopleTotalPage,
+} from "../peopleSlice";
 import { MoviePeople } from "../../../common/MoviePeople";
-import { fetchPopularPeople, selectPopularPeople } from "../peopleSlice";
+import { usePageNumber } from "../../../common/usePageNumber";
 import Pagination from "../../../common/Pagination";
+import { Wrapper } from "./styled";
 
 export const PeopleList = () => {
-  
   const dispatch = useDispatch();
-  const people = useSelector(selectPopularPeople);
+  const page = usePageNumber();
+  const people = useSelector(selectPopularPeopleResults);
+  const totalPage = useSelector(selectPopularPeopleTotalPage);
 
   useEffect(() => {
-    dispatch(fetchPopularPeople());
-  }, [dispatch]);
+    dispatch(fetchPopularPeople(page));
+  }, [page, dispatch]);
 
   return (
     <Wrapper>
       <MoviePeople title={"Popular people"} items={people} />
-      <Pagination />
+      <Pagination totalPage={totalPage} />
     </Wrapper>
   );
 };
