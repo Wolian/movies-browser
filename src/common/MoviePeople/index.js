@@ -9,7 +9,7 @@ export const MoviePeople = ({ title, items }) => {
         {items &&
           items.map((item) => (
             <PersonTile
-              key={item.cast_id}
+              key={item.id}
               name={item.name}
               role={item.character ? item.character : item.department}
               photo={item.profile_path}
