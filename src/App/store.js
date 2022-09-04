@@ -15,6 +15,7 @@ const store = configureStore({
     genres: moviesReducer,
     popularPeople: peopleReducer,
     personDetail: peopleReducer,
+    personCastCrew: peopleReducer,
   },
   
   middleware: [sagaMiddleware],

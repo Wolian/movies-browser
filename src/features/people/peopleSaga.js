@@ -6,8 +6,8 @@ import {
   setPopularPeople,
   fetchPersonDetail,
   setPersonDetail,
-  fetchPeopleCrewCast,
-  setPeopleCrewCast,
+  fetchPersonCastCrew,
+  setPersonCastCrew,
 } from "./peopleSlice";
 
 function* fetchPopularPeopleHandler() {
@@ -32,12 +32,12 @@ function* fetchPersonDetailHandler({ payload:id }) {
   }
 }
 
-function* fetchPeopleHandlerCrewCast({ payload: id }) {
+function* fetchPersonCastCrewHandler({ payload:id }) {
   try {
-    const people = yield axios.get(
-      `${APIUrl}movie/${id}person/{person_id}?api_key=${APIKey}&language=en-US`
+    const personCastCrew = yield axios.get(
+      `${APIUrl}person/${id}/movie_credits?api_key=${APIKey}`
     );
-    yield put(setPeopleCrewCast(people.data));
+    yield put(setPersonCastCrew(personCastCrew.data));
   } catch (error) {
     yield console.log("error", error);
   }
@@ -45,6 +45,6 @@ function* fetchPeopleHandlerCrewCast({ payload: id }) {
 
 export function* popularPeopleSaga() {
   yield takeEvery(fetchPopularPeople.type, fetchPopularPeopleHandler);
-  yield takeEvery(fetchPeopleCrewCast.type, fetchPeopleHandlerCrewCast);
   yield takeEvery(fetchPersonDetail.type, fetchPersonDetailHandler);
+  yield takeEvery(fetchPersonCastCrew.type, fetchPersonCastCrewHandler);
 }
