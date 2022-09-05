@@ -15,6 +15,7 @@ import Loading from "../../common/Loading";
 import { NoResultsPage } from "../../common/NoResultsPage";
 import { usePageNumber } from "../../common/usePageNumber";
 import { Wrapper } from "./styled";
+import { MovieList } from "../movies/MovieList";
 
 export const SearchResult = () => {
   const dispatch = useDispatch();
@@ -56,8 +57,12 @@ export const SearchResult = () => {
       render = <ErrorPage />;
   }
 
-  if (query === null || totalResults === 0) {
+  if (totalResults === 0) {
     render = <NoResultsPage />;
+  }
+
+  if (query === null) {
+    render = <MovieList />;
   }
 
   for (const keyUrl of keysUrl) {
