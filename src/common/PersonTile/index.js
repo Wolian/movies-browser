@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { APIPhotoUrl } from "../../App/API";
 import { Tile, Image, Name, Role } from "./styled";
 import noPersonPhoto from "./noPersonPhoto.svg";
