@@ -64,7 +64,7 @@ export const useShowResultSearch = (
               />
             ))}
           </ContainerPerson>
-          <Pagination />
+          <Pagination totalPage={totalPage} />
         </div>
       );
       break;
