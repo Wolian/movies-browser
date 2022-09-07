@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Wrapper, Paragraph, Link, Text, Number } from "./styled";
-import { Arrow, ArrowMobile } from "./Arrow";
 import { useLocation, useNavigate } from "react-router-dom";
+import { searchNextPage } from "../../features/SearchResult/searchNameValue";
+import { Arrow, ArrowMobile } from "./Arrow";
+import { Wrapper, Paragraph, Link, Text, Number } from "./styled";
 
-const Pagination = ({ totalPage }) => {
-  const [numberPage, setNumberPage] = useState(1);
+const Pagination = ({ totalPage, page }) => {
+  const [numberPage, setNumberPage] = useState(+page);
   const location = useLocation();
   const navigate = useNavigate();
   const pageParams = new URLSearchParams(location.search);
@@ -14,7 +15,7 @@ const Pagination = ({ totalPage }) => {
   }
 
   useEffect(() => {
-    pageParams.set("page", numberPage);
+    pageParams.set(searchNextPage, numberPage);
     navigate({
       search: `?${pageParams}`,
     });
