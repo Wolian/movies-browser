@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { searchQueryParamName, searchTypePage } from "./searchNameValue";
+import {
+  searchNextPage,
+  searchQueryParamName,
+  searchTypePage,
+} from "./searchNameValue";
 import { useShowResultSearch } from "./useShowResultSearch";
 import {
   fetchSearch,
@@ -16,6 +20,7 @@ import { NoResultsPage } from "../../common/NoResultsPage";
 import { usePageNumber } from "../../common/usePageNumber";
 import { Wrapper } from "./styled";
 import { MovieList } from "../movies/MovieList";
+import Pagination from "../../common/Pagination";
 
 export const SearchResult = () => {
   const dispatch = useDispatch();
@@ -36,8 +41,8 @@ export const SearchResult = () => {
     query,
     typePage,
     results,
-    totalPage,
-    totalResults
+    totalResults,
+    page
   );
 
   useEffect(() => {
@@ -51,7 +56,11 @@ export const SearchResult = () => {
       render = <Loading title={`Search result for "${query}"`} />;
       break;
     case false:
-      render = showResults;
+      render = (
+        <>
+          {showResults} <Pagination totalPage={totalPage} page={page} />
+        </>
+      );
       break;
     default:
       render = <ErrorPage />;
@@ -69,7 +78,7 @@ export const SearchResult = () => {
     if (
       keyUrl !== searchTypePage &&
       keyUrl !== searchQueryParamName &&
-      keyUrl !== "page"
+      keyUrl !== searchNextPage
     ) {
       render = <ErrorPage />;
     }
