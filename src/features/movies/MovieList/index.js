@@ -44,7 +44,7 @@ export const MovieList = () => {
             />
           ))}
       </Container>
-      <Pagination totalPage={totalPage} page={page == null ? 1 : page} />
+      <Pagination totalPage={totalPage} page={page === null ? 1 : page} />
     </Wrapper>
   );
 };
