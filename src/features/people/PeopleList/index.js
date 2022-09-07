@@ -23,7 +23,7 @@ export const PeopleList = () => {
   return (
     <Wrapper>
       <MoviePeople title={"Popular people"} items={people} />
-      <Pagination totalPage={totalPage} />
+      <Pagination totalPage={totalPage} page={page == null ? 1 : page} />
     </Wrapper>
   );
 };
