@@ -4,16 +4,9 @@ import { fetchGenres, selectGenres } from "../movies/moviesSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { PersonTile } from "../../common/PersonTile";
 import ErrorPage from "../../common/ErrorPage";
-import Pagination from "../../common/Pagination";
 import { ContainerMovie, ContainerPerson } from "./styled";
 
-export const useShowResultSearch = (
-  query,
-  typePage,
-  results,
-  totalPage,
-  totalResults
-) => {
+export const useShowResultSearch = (query, typePage, results, totalResults) => {
   const dispatch = useDispatch();
   const genres = useSelector(selectGenres);
 
@@ -26,7 +19,7 @@ export const useShowResultSearch = (
   switch (typePage) {
     case "movie":
       showResults = (
-        <div>
+        <>
           <h1>
             Search result for "{query}" ({totalResults})
           </h1>
@@ -45,13 +38,12 @@ export const useShowResultSearch = (
               />
             ))}
           </ContainerMovie>
-          <Pagination totalPage={totalPage} />
-        </div>
+        </>
       );
       break;
     case "person":
       showResults = (
-        <div>
+        <>
           <h1>
             Search result for "{query}" ({totalResults})
           </h1>
@@ -64,8 +56,7 @@ export const useShowResultSearch = (
               />
             ))}
           </ContainerPerson>
-          <Pagination totalPage={totalPage} />
-        </div>
+        </>
       );
       break;
     default:
