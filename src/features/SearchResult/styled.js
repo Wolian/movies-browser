@@ -6,13 +6,13 @@ export const Wrapper = styled.main`
   padding: 0 10px;
 `;
 
-export const ContainerMovie = styled.div`
+export const ContainerMovie = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
   grid-gap: 24px;
 `;
 
-export const ContainerPerson = styled.div`
+export const ContainerPerson = styled.section`
   margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
