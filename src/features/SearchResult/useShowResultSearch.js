@@ -51,6 +51,7 @@ export const useShowResultSearch = (query, typePage, results, totalResults) => {
             {results?.map((result) => (
               <PersonTile
                 key={result.id}
+                personId={result.id}
                 name={result.name}
                 photo={result.profile_path}
               />
