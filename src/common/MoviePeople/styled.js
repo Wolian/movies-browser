@@ -32,15 +32,12 @@ export const Header = styled.h2`
 export const Container = styled.div`
   margin-top: 32px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 24px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    margin-top: 12px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 12px;
   }
 `;
 

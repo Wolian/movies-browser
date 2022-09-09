@@ -10,7 +10,7 @@ import {
 } from "./styled";
 
 import { APIPhotoUrl } from "../../App/API";
-import noImgPoster from "../../common/PersonTile/noPersonPhoto.svg";
+import noImgPoster from "../../common/PersonTile/noPersonPhoto.png";
 
 export const PersonDetail = ({
     poster,

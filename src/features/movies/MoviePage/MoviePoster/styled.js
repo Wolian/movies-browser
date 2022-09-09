@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "../Vector.svg";
 
-export const Header = styled.header`
+export const Header = styled.section`
   display: flex;
   justify-content: center;
   background: linear-gradient(
