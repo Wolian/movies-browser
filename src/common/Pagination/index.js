@@ -1,38 +1,80 @@
-import { Wrapper, Paragraph, Link, Text, Number } from "./styled";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { searchNextPage } from "../../features/SearchResult/searchNameValue";
 import { Arrow, ArrowMobile } from "./Arrow";
+import { Wrapper, Paragraph, Link, Text, Number } from "./styled";
 
-const Pagination = () => (
-  <Wrapper>
-    <p>
-      <Link active={false}>
-        <Arrow active={false} />
-        <ArrowMobile active={false} />
-        <Text>First</Text>
-      </Link>
+const Pagination = ({ totalPage, page }) => {
+  const [numberPage, setNumberPage] = useState(+page);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const pageParams = new URLSearchParams(location.search);
 
-      <Link active={false}>
-        <Arrow active={false} />
-        <Text>Previous</Text>
-      </Link>
-    </p>
+  if (totalPage > 500) {
+    totalPage = 500;
+  }
 
-    <Paragraph>
-      Page <Number>1</Number> of <Number>500</Number>
-    </Paragraph>
+  useEffect(() => {
+    pageParams.set(searchNextPage, numberPage);
+    navigate({
+      search: `?${pageParams}`,
+    });
+  }, [numberPage, navigate]);
 
-    <p>
-      <Link active={true} href="#">
-        <Text>Next</Text>
-        <Arrow rotation={true} active={true} />
-      </Link>
+  return (
+    <Wrapper>
+      <p>
+        <Link
+          disabled={numberPage <= 1 ? true : false}
+          onClick={() => setNumberPage(1)}
+        >
+          <Arrow active={numberPage <= 1 ? false : true} />
+          <ArrowMobile active={numberPage <= 1 ? false : true} />
+          <Text>First</Text>
+        </Link>
 
-      <Link active={true} href="#">
-        <Text>Last</Text>
-        <ArrowMobile rotation={true} active={true} />
-        <Arrow rotation={true} active={true} />
-      </Link>
-    </p>
-  </Wrapper>
-);
+        <Link
+          disabled={numberPage <= 1 ? true : false}
+          onClick={() => setNumberPage((numberPage) => numberPage - 1)}
+        >
+          <Arrow active={numberPage <= 1 ? false : true} />
+          <Text>Previous</Text>
+        </Link>
+      </p>
+
+      <Paragraph>
+        Page <Number>{numberPage}</Number> of <Number>{totalPage}</Number>
+      </Paragraph>
+
+      <p>
+        <Link
+          disabled={numberPage === totalPage ? true : false}
+          onClick={() => setNumberPage((numberPage) => numberPage + 1)}
+        >
+          <Text>Next</Text>
+          <Arrow
+            rotation={true}
+            active={numberPage === totalPage ? false : true}
+          />
+        </Link>
+
+        <Link
+          disabled={numberPage === totalPage ? true : false}
+          onClick={() => setNumberPage(totalPage)}
+        >
+          <Text>Last</Text>
+          <ArrowMobile
+            rotation={true}
+            active={numberPage === totalPage ? false : true}
+          />
+          <Arrow
+            rotation={true}
+            active={numberPage === totalPage ? false : true}
+          />
+        </Link>
+      </p>
+    </Wrapper>
+  );
+};
 
 export default Pagination;

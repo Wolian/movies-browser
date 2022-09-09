@@ -1,17 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectTotalResults } from "./searchSlice";
 import { fetchGenres, selectGenres } from "../movies/moviesSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { PersonTile } from "../../common/PersonTile";
 import ErrorPage from "../../common/ErrorPage";
-import Pagination from "../../common/Pagination";
 import { ContainerMovie, ContainerPerson } from "./styled";
 
-export const useShowResultSearch = (query, typePage, results) => {
+export const useShowResultSearch = (query, typePage, results, totalResults) => {
   const dispatch = useDispatch();
   const genres = useSelector(selectGenres);
-  const totalResults = useSelector(selectTotalResults);
 
   useEffect(() => {
     dispatch(fetchGenres());
@@ -22,7 +19,7 @@ export const useShowResultSearch = (query, typePage, results) => {
   switch (typePage) {
     case "movie":
       showResults = (
-        <div>
+        <>
           <h1>
             Search result for "{query}" ({totalResults})
           </h1>
@@ -41,13 +38,12 @@ export const useShowResultSearch = (query, typePage, results) => {
               />
             ))}
           </ContainerMovie>
-          <Pagination />
-        </div>
+        </>
       );
       break;
     case "person":
       showResults = (
-        <div>
+        <>
           <h1>
             Search result for "{query}" ({totalResults})
           </h1>
@@ -61,8 +57,7 @@ export const useShowResultSearch = (query, typePage, results) => {
               />
             ))}
           </ContainerPerson>
-          <Pagination />
-        </div>
+        </>
       );
       break;
     default:

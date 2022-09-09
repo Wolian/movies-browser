@@ -21,15 +21,21 @@ const peopleSlice = createSlice({
             state.personCastCrew = personCastCrew
         },
     },
-});
+  },
+);
 
 export const selectPopularPeopleState = (state) => state.popularPeople;
 export const selectPersonDetailState = (state) => state.personDetail;
 export const selectPersonCastCrewState = (state) => state.personCastCrew;
 
-export const selectPopularPeople = (state) => selectPopularPeopleState(state).popularPeople;
+export const selectPopularPeople = (state) =>
+  selectPopularPeopleState(state).popularPeople;
+export const selectPopularPeopleResults = (state) =>
+  selectPopularPeople(state).results;
 export const selectPersonDetail = (state) => selectPersonDetailState(state).personDetail;
 export const selectPersonCastCrew = (state) => selectPersonCastCrewState(state).personCastCrew;
+export const selectPopularPeopleTotalPage = (state) =>
+  selectPopularPeople(state).total_pages;
 
 export const {
     fetchPopularPeople,
@@ -41,4 +47,3 @@ export const {
 } = peopleSlice.actions;
 
 export default peopleSlice.reducer;
-

@@ -10,12 +10,12 @@ import {
   setPersonCastCrew,
 } from "./peopleSlice";
 
-function* fetchPopularPeopleHandler() {
+function* fetchPopularPeopleHandler({ payload: page }) {
   try {
     const popularPeople = yield axios.get(
-      `${APIUrl}person/popular?api_key=${APIKey}`
+      `${APIUrl}person/popular?api_key=${APIKey}&language=en-US&page=${page}`
     );
-    yield put(setPopularPeople(popularPeople.data.results));
+    yield put(setPopularPeople(popularPeople.data));
   } catch (error) {
     yield console.log("error", error);
   }

@@ -22,19 +22,21 @@ export const Paragraph = styled.p`
   }
 `;
 
-export const Link = styled.a`
+export const Link = styled.button`
   padding: 8px 16px;
   margin: 0 6px;
   background: ${({ theme }) => theme.colors.mystic};
+  border: none;
   border-radius: ${({ theme }) => theme.borderRadiusSmall};
   color: ${({ theme }) => theme.colors.woodSmoke};
   text-decoration: none;
   transition: background 0.4s;
 
-  ${({ active }) =>
-    active &&
+  ${({ disabled }) =>
+    !disabled &&
     css`
       background: ${({ theme }) => theme.colors.pattensBlue};
+      cursor: pointer;
 
       &:hover {
         background: ${({ theme }) => theme.colors.linkWater};

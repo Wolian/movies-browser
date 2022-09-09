@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import {
+  searchNextPage,
   searchQueryParamName,
   searchTypePage,
 } from "../../features/SearchResult/searchNameValue";
@@ -22,6 +23,7 @@ const Search = () => {
     } else {
       searchParams.set(searchTypePage, typePage);
       searchParams.set(searchQueryParamName, target.value);
+      searchParams.set(searchNextPage, 1);
     }
 
     navigate({

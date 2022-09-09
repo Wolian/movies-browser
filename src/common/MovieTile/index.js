@@ -40,7 +40,7 @@ export const MovieTile = ({
           <Tags>
             {genres.map(
               (genre) =>
-                movieGenre.includes(genre.id) && (
+                movieGenre?.includes(genre.id) && (
                   <Tag key={genre.id}>{genre.name}</Tag>
                 )
             )}
