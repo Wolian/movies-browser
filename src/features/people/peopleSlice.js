@@ -22,7 +22,7 @@ const peopleSlice = createSlice({
         },
     },
   },
-});
+);
 
 export const selectPopularPeopleState = (state) => state.popularPeople;
 export const selectPersonDetailState = (state) => state.personDetail;
