@@ -31,10 +31,10 @@ export const MovieList = () => {
   let render = "";
 
   switch (loading) {
-    case true:
+    case "loading":
       render = <Loading title={"please wait..."} />;
       break;
-    case false:
+    case "success":
       render = (
         <>
           <Header>Popular movies</Header>
@@ -60,7 +60,7 @@ export const MovieList = () => {
       );
       break;
     default:
-      <ErrorPage />;
+      render = <ErrorPage />;
   }
 
   return <Wrapper>{render}</Wrapper>;

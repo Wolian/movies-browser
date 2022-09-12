@@ -10,6 +10,8 @@ import {
   fetchPopularMovies,
   fetchGenres,
   setGenres,
+  fetchErrorMovies,
+  fetchErrorPopularMovies,
 } from "./moviesSlice";
 
 function* fetchMoviesHandler({ payload: id }) {
@@ -18,7 +20,8 @@ function* fetchMoviesHandler({ payload: id }) {
     const movies = yield axios.get(`${APIUrl}movie/${id}?api_key=${APIKey}`);
     yield put(setMovies(movies.data));
   } catch (error) {
-    yield console.log("error", error);
+    yield put(fetchErrorMovies("error"));
+    yield console.error(error);
   }
 }
 
@@ -29,7 +32,7 @@ function* fetchPeopleHandler({ payload: id }) {
     );
     yield put(setPeople(people.data));
   } catch (error) {
-    yield console.log("error", error);
+    yield console.error(error);
   }
 }
 
@@ -41,7 +44,8 @@ function* fetchPopularMoviesHandler({ payload: page }) {
     );
     yield put(setPopularMovies(popularMovies.data));
   } catch (error) {
-    yield console.log("error", error);
+    yield put(fetchErrorPopularMovies("error"));
+    yield console.error(error);
   }
 }
 
@@ -52,7 +56,7 @@ function* fetchGenresHandler() {
     );
     yield put(setGenres(response.data.genres));
   } catch (error) {
-    yield console.log("error", error);
+    yield console.error(error);
   }
 }
 

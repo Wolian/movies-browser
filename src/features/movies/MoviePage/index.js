@@ -22,6 +22,7 @@ export const MoviePage = () => {
   const movies = useSelector(selectMovies);
   const people = useSelector(selectPeople);
   const loading = useSelector(selectLoadingMovie);
+  console.log(loading);
 
   useEffect(() => {
     dispatch(fetchMovies(id));
@@ -31,14 +32,14 @@ export const MoviePage = () => {
   let render = "";
 
   switch (loading) {
-    case true:
+    case "loading":
       render = (
         <Center>
           <Loading title={"please wait..."} />
         </Center>
       );
       break;
-    case false:
+    case "success":
       render = (
         <>
           <MoviePoster
@@ -65,7 +66,7 @@ export const MoviePage = () => {
       );
       break;
     default:
-      <ErrorPage />;
+      render = <ErrorPage />;
   }
 
   return render;

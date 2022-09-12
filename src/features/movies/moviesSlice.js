@@ -7,26 +7,32 @@ const moviesSlice = createSlice({
     people: [],
     popularMovies: [],
     genres: [],
-    loading: true,
+    loading: "loading",
   },
   reducers: {
     fetchMovies: (state) => {
-      state.loading = true;
+      state.loading = "loading";
     },
     setMovies: (state, { payload: movies }) => {
       state.movies = movies;
-      state.loading = false;
+      state.loading = "success";
+    },
+    fetchErrorMovies: (state) => {
+      state.loading = "error";
     },
     fetchPeople: () => {},
     setPeople: (state, { payload: people }) => {
       state.people = people;
     },
     fetchPopularMovies: (state) => {
-      state.loading = true;
+      state.loading = "loading";
+    },
+    fetchErrorPopularMovies: (state) => {
+      state.loading = "error";
     },
     setPopularMovies: (state, { payload: popularMovies }) => {
       state.popularMovies = popularMovies;
-      state.loading = false;
+      state.loading = "success";
     },
     fetchGenres: () => {},
     setGenres: (state, { payload: genres }) => {
@@ -54,10 +60,12 @@ export const selectLoadingMovie = (state) => selectMoviesState(state).loading;
 export const {
   setMovies,
   fetchMovies,
+  fetchErrorMovies,
   setPeople,
   fetchPeople,
   setPopularMovies,
   fetchPopularMovies,
+  fetchErrorPopularMovies,
   setGenres,
   fetchGenres,
 } = moviesSlice.actions;
