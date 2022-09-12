@@ -22,7 +22,6 @@ export const MoviePage = () => {
   const movies = useSelector(selectMovies);
   const people = useSelector(selectPeople);
   const loading = useSelector(selectLoadingMovie);
-  console.log(loading);
 
   useEffect(() => {
     dispatch(fetchMovies(id));
