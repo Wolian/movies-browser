@@ -7,7 +7,7 @@ const moviesSlice = createSlice({
     people: [],
     popularMovies: [],
     genres: [],
-    loading: "loading",
+    loading: "",
   },
   reducers: {
     fetchMovies: (state) => {

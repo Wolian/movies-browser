@@ -4,7 +4,7 @@ const searchSlice = createSlice({
   name: "search",
   initialState: {
     resultSearch: [],
-    loading: "loading",
+    loading: "",
   },
   reducers: {
     fetchSearch: (state) => {
