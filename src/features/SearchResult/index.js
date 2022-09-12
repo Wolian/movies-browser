@@ -14,13 +14,13 @@ import {
   selectSearchResultsTotalPages,
   selectTotalResults,
 } from "./searchSlice";
-import ErrorPage from "../../common/ErrorPage";
-import Loading from "../../common/Loading";
+import { ErrorPage } from "../../common/ErrorPage";
+import { Loading } from "../../common/Loading";
 import { NoResultsPage } from "../../common/NoResultsPage";
 import { usePageNumber } from "../../common/usePageNumber";
-import { Wrapper } from "./styled";
 import { MovieList } from "../movies/MovieList";
 import Pagination from "../../common/Pagination";
+import { Wrapper } from "./styled";
 
 export const SearchResult = () => {
   const dispatch = useDispatch();

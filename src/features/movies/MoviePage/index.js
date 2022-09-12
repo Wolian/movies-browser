@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { MoviePeople } from "../../../common/MoviePeople";
-import Loading from "../../../common/Loading";
+import { Loading } from "../../../common/Loading";
 import { MovieDetail } from "../../../common/MovieDetail";
-import ErrorPage from "../../../common/ErrorPage";
+import { ErrorPage } from "../../../common/ErrorPage";
 import { MoviePoster } from "./MoviePoster";
 import {
   fetchMovies,
