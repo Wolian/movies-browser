@@ -1,5 +1,5 @@
 import axios from "axios";
-import { put, takeEvery } from "redux-saga/effects";
+import { delay, put, takeEvery } from "redux-saga/effects";
 import { APIKey, APIUrl } from "../../App/API";
 import {
   fetchPopularPeople,
@@ -12,6 +12,7 @@ import {
 
 function* fetchPopularPeopleHandler({ payload: page }) {
   try {
+    yield delay(1500);
     const popularPeople = yield axios.get(
       `${APIUrl}person/popular?api_key=${APIKey}&language=en-US&page=${page}`
     );
@@ -21,8 +22,9 @@ function* fetchPopularPeopleHandler({ payload: page }) {
   }
 }
 
-function* fetchPersonDetailHandler({ payload:id }) {
+function* fetchPersonDetailHandler({ payload: id }) {
   try {
+    yield delay(1500);
     const personDetail = yield axios.get(
       `${APIUrl}person/${id}?api_key=${APIKey}`
     );
@@ -32,7 +34,7 @@ function* fetchPersonDetailHandler({ payload:id }) {
   }
 }
 
-function* fetchPersonCastCrewHandler({ payload:id }) {
+function* fetchPersonCastCrewHandler({ payload: id }) {
   try {
     const personCastCrew = yield axios.get(
       `${APIUrl}person/${id}/movie_credits?api_key=${APIKey}`
