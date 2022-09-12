@@ -52,10 +52,10 @@ export const SearchResult = () => {
   let render = "";
 
   switch (loading) {
-    case true:
+    case "loading":
       render = <Loading title={`Search result for "${query}"`} />;
       break;
-    case false:
+    case "success":
       render = (
         <>
           {showResults} <Pagination totalPage={totalPage} page={page} />
