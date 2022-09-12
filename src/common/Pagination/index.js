@@ -4,7 +4,7 @@ import { searchNextPage } from "../../features/SearchResult/searchNameValue";
 import { Arrow, ArrowMobile } from "./Arrow";
 import { Wrapper, Paragraph, Link, Text, Number } from "./styled";
 
-const Pagination = ({ totalPage, page }) => {
+export const Pagination = ({ totalPage, page }) => {
   const [numberPage, setNumberPage] = useState(+page);
   const location = useLocation();
   const navigate = useNavigate();
@@ -76,5 +76,3 @@ const Pagination = ({ totalPage, page }) => {
     </Wrapper>
   );
 };
-
-export default Pagination;
