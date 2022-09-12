@@ -8,7 +8,7 @@ import {
   ButtonLink,
 } from "./styled";
 
-const ErrorPage = () => {
+export const ErrorPage = () => {
   return (
     <Wrapper>
       <Icon />
@@ -16,14 +16,9 @@ const ErrorPage = () => {
         <Span>OOOps!</Span> Something went wrong...
       </Header>
       <Text>
-        <Paragaph>
-          Please check your newtork connection <br />
-          and try again
-        </Paragaph>
+        <Paragaph>Please check your newtork connection and try again</Paragaph>
       </Text>
       <ButtonLink to="/">Back to home page</ButtonLink>
     </Wrapper>
   );
 };
-
-export default ErrorPage;
