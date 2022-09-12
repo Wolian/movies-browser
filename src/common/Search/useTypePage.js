@@ -15,7 +15,7 @@ export const useTypePage = () => {
       typePage = "movie";
       break;
     case "people":
-    case "personpage":
+    case "peopleprofile":
       typePage = "person";
       break;
     default:
