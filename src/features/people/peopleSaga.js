@@ -8,6 +8,8 @@ import {
   setPersonDetail,
   fetchPersonCastCrew,
   setPersonCastCrew,
+  fetchErrorPopularPeople,
+  fetchErrorPersonDetail,
 } from "./peopleSlice";
 
 function* fetchPopularPeopleHandler({ payload: page }) {
@@ -18,7 +20,8 @@ function* fetchPopularPeopleHandler({ payload: page }) {
     );
     yield put(setPopularPeople(popularPeople.data));
   } catch (error) {
-    yield console.log("error", error);
+    yield put(fetchErrorPopularPeople("error"));
+    yield console.error(error);
   }
 }
 
@@ -30,7 +33,8 @@ function* fetchPersonDetailHandler({ payload: id }) {
     );
     yield put(setPersonDetail(personDetail.data));
   } catch (error) {
-    yield console.log("error", error);
+    yield put(fetchErrorPersonDetail("error"));
+    yield console.error(error);
   }
 }
 
@@ -41,7 +45,7 @@ function* fetchPersonCastCrewHandler({ payload: id }) {
     );
     yield put(setPersonCastCrew(personCastCrew.data));
   } catch (error) {
-    yield console.log("error", error);
+    yield console.error(error);
   }
 }
 

@@ -27,10 +27,10 @@ export const PeopleList = () => {
   let render = "";
 
   switch (loading) {
-    case true:
+    case "loading":
       render = <Loading title={"please wait..."} />;
       break;
-    case false:
+    case "success":
       render = (
         <>
           <MoviePeople title={"Popular people"} items={people} />

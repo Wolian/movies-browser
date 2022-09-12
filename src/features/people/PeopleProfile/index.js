@@ -32,10 +32,10 @@ export const PeopleProfile = () => {
   let render = "";
 
   switch (loading) {
-    case true:
+    case "loading":
       render = <Loading title={"please wait..."} />;
       break;
-    case false:
+    case "success":
       render = (
         <>
           <PersonDetail

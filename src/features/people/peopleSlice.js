@@ -6,22 +6,28 @@ const peopleSlice = createSlice({
     popularPeople: [],
     personDetail: [],
     personCastCrew: [],
-    loading: true,
+    loading: "loading",
   },
   reducers: {
     fetchPopularPeople: (state) => {
-      state.loading = true;
+      state.loading = "loading";
     },
     setPopularPeople: (state, { payload: popularPeople }) => {
       state.popularPeople = popularPeople;
-      state.loading = false;
+      state.loading = "success";
+    },
+    fetchErrorPopularPeople: (state) => {
+      state.loading = "error";
     },
     fetchPersonDetail: (state) => {
-      state.loading = true;
+      state.loading = "loading";
     },
     setPersonDetail: (state, { payload: personDetail }) => {
       state.personDetail = personDetail;
-      state.loading = false;
+      state.loading = "success";
+    },
+    fetchErrorPersonDetail: (state) => {
+      state.loading = "error";
     },
     fetchPersonCastCrew: () => {},
     setPersonCastCrew: (state, { payload: personCastCrew }) => {
@@ -52,8 +58,10 @@ export const selectLoadingPerson = (state) =>
 export const {
   fetchPopularPeople,
   setPopularPeople,
+  fetchErrorPopularPeople,
   fetchPersonDetail,
   setPersonDetail,
+  fetchErrorPersonDetail,
   fetchPersonCastCrew,
   setPersonCastCrew,
 } = peopleSlice.actions;
