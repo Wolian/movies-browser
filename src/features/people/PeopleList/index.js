@@ -8,7 +8,7 @@ import {
 } from "../peopleSlice";
 import { MoviePeople } from "../../../common/MoviePeople";
 import { usePageNumber } from "../../../common/usePageNumber";
-import Pagination from "../../../common/Pagination";
+import { Pagination } from "../../../common/Pagination";
 import { Loading } from "../../../common/Loading";
 import { ErrorPage } from "../../../common/ErrorPage";
 import { Wrapper } from "./styled";

@@ -19,7 +19,7 @@ import { Loading } from "../../common/Loading";
 import { NoResultsPage } from "../../common/NoResultsPage";
 import { usePageNumber } from "../../common/usePageNumber";
 import { MovieList } from "../movies/MovieList";
-import Pagination from "../../common/Pagination";
+import { Pagination } from "../../common/Pagination";
 import { Wrapper } from "./styled";
 
 export const SearchResult = () => {

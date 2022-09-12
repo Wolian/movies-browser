@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { usePageNumber } from "../../../common/usePageNumber";
 import { MovieTile } from "../../../common/MovieTile";
-import Pagination from "../../../common/Pagination";
+import { Pagination } from "../../../common/Pagination";
 import { Loading } from "../../../common/Loading";
 import { ErrorPage } from "../../../common/ErrorPage";
 import {
