@@ -12,6 +12,7 @@ import {
   Votes,
   Content,
   TileWrapper,
+  MovieImage,
 } from "./styled";
 import vector from "../images/vector.png";
 import { APIPhotoUrl } from "../../App/API";
@@ -28,9 +29,11 @@ export const MovieTile = ({
 }) => {
   return (
     <TileWrapper>
-      <MovieLink to={`/moviepage/${id}`}>
-        <Image src={`${APIPhotoUrl}w500${poster}`} alt="" />
-      </MovieLink>
+      <MovieImage>
+        <MovieLink to={`/moviepage/${id}`}>
+          <Image src={`${APIPhotoUrl}w500${poster}`} alt="" />
+        </MovieLink>
+      </MovieImage>
       <Content>
         <Description>
           <Title>

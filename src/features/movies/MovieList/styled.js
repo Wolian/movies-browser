@@ -10,6 +10,10 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
   grid-gap: 24px;
+
+  @media (max-width: 635px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Header = styled.h1`
