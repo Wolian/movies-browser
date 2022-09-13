@@ -15,6 +15,7 @@ import {
 } from "./styled";
 import vector from "../images/vector.png";
 import { APIPhotoUrl } from "../../App/API";
+import noMoviePhoto from "./noMoviePhoto.png";
 
 export const MovieTile = ({
   poster,
@@ -26,10 +27,11 @@ export const MovieTile = ({
   movieGenre,
   id,
 }) => {
+  const image = `${APIPhotoUrl}w500${poster}`;
   return (
     <TileWrapper>
       <MovieLink to={`/moviepage/${id}`}>
-        <Image src={`${APIPhotoUrl}w500${poster}`} alt="" />
+        <Image src={poster ? image : noMoviePhoto} alt="" />
       </MovieLink>
       <Content>
         <Description>
