@@ -4,18 +4,18 @@ const searchSlice = createSlice({
   name: "search",
   initialState: {
     resultSearch: [],
-    loading: true,
+    loading: "",
   },
   reducers: {
     fetchSearch: (state) => {
-      state.loading = true;
+      state.loading = "loading";
     },
     setSearch: (state, { payload: apiResults }) => {
-      state.loading = false;
+      state.loading = "success";
       state.resultSearch = apiResults;
     },
-    fetchSearchError: (state) => {
-      state.loading = false;
+    fetchErrorSearch: (state) => {
+      state.loading = "error";
     },
   },
 });
@@ -30,6 +30,6 @@ export const selectSearchResultsTotalPages = (state) =>
   selectSearchResults(state).total_pages;
 export const selectLoadingSearch = (state) => selectSearchState(state).loading;
 
-export const { fetchSearch, setSearch, fetchSearchError } = searchSlice.actions;
+export const { fetchSearch, setSearch, fetchErrorSearch } = searchSlice.actions;
 
 export default searchSlice.reducer;

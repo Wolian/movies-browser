@@ -16,3 +16,8 @@ export const Section = styled.div`
     margin-top: 21px;
   } ;
 `;
+
+export const Center = styled.div`
+  max-width: 1360px;
+  margin: 0 auto;
+`;

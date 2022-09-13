@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchGenres, selectGenres } from "../movies/moviesSlice";
 import { MovieTile } from "../../common/MovieTile";
 import { PersonTile } from "../../common/PersonTile";
-import ErrorPage from "../../common/ErrorPage";
+import { ErrorPage } from "../../common/ErrorPage";
 import { ContainerMovie, ContainerPerson } from "./styled";
 
 export const useShowResultSearch = (query, typePage, results, totalResults) => {

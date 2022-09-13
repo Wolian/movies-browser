@@ -4,7 +4,7 @@ import { MovieList } from "../features/movies/MovieList";
 import { PeopleList } from "../features/people/PeopleList";
 import { PeopleProfile } from "../features/people/PeopleProfile";
 import { SearchResult } from "../features/SearchResult";
-import ErrorPage from "../common/ErrorPage";
+import { ErrorPage } from "../common/ErrorPage";
 import Navigation from "../common/Navigation";
 
 export const App = () => {
