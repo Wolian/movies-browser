@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   searchNextPage,
@@ -18,7 +18,6 @@ import { ErrorPage } from "../../common/ErrorPage";
 import { Loading } from "../../common/Loading";
 import { NoResultsPage } from "../../common/NoResultsPage";
 import { usePageNumber } from "../../common/usePageNumber";
-import { MovieList } from "../movies/MovieList";
 import { Pagination } from "../../common/Pagination";
 import { Wrapper } from "./styled";
 
@@ -29,6 +28,7 @@ export const SearchResult = () => {
   const totalResults = useSelector(selectTotalResults);
   const totalPage = useSelector(selectSearchResultsTotalPages);
   const page = usePageNumber();
+  let navigate = useNavigate();
 
   const location = useLocation();
   const urlParams = new URLSearchParams(location.search);
@@ -71,7 +71,22 @@ export const SearchResult = () => {
   }
 
   if (query === null) {
-    render = <MovieList />;
+    switch (typePage) {
+      case "movie":
+        navigate({
+          pathname: "/movies",
+        });
+        break;
+      case "person":
+        navigate({
+          pathname: "/people",
+        });
+        break;
+      default:
+        navigate({
+          pathname: "/movies",
+        });
+    }
   }
 
   for (const keyUrl of keysUrl) {
