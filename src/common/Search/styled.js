@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 15px 26px;

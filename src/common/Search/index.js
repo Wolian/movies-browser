@@ -5,7 +5,7 @@ import {
   searchTypePage,
 } from "../../features/SearchResult/searchNameValue";
 import { useTypePage } from "./useTypePage";
-import { Wrapper, IconSearch, Input } from "./styled";
+import { SearchWrapper, IconSearch, Input } from "./styled";
 import searchIcon from "./search.svg";
 
 const Search = () => {
@@ -33,7 +33,7 @@ const Search = () => {
   };
 
   return (
-    <Wrapper>
+    <SearchWrapper>
       <IconSearch src={searchIcon} alt="" />
       <Input
         value={query == null ? "" : query}
@@ -42,7 +42,7 @@ const Search = () => {
         type="text"
         max="50"
       />
-    </Wrapper>
+    </SearchWrapper>
   );
 };
 

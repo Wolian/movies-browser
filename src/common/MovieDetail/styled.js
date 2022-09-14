@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "../../features/movies/MoviePage/Vector.svg";
 
-export const Wrapper = styled.section`
+export const Container = styled.section`
   background-color: ${({ theme }) => theme.colors.white};
-  max-width: 1368px;
   //width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as ErrorIcon } from "./Icon.svg";
 
-export const Wrapper = styled.section`
+export const Container = styled.section`
   margin-top: 195px;
   display: flex;
   flex-direction: column;

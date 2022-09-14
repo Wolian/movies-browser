@@ -1,5 +1,4 @@
 import {
-  Wrapper,
   Poster,
   InfoWrapper,
   Title,
@@ -18,7 +17,9 @@ import {
   Span,
   Votes,
   Description,
+  Container,
 } from "./styled";
+import { Wrapper } from "../Wrapper/styled";
 
 import { APIPhotoUrl } from "../../App/API";
 
@@ -34,6 +35,7 @@ export const MovieDetail = ({
 }) => {
   return (
     <Wrapper>
+      <Container>
       <Poster src={`${APIPhotoUrl}w342/${poster}`} alt="poster" />
       <InfoWrapper>
         <Title>{title}</Title>
@@ -71,6 +73,7 @@ export const MovieDetail = ({
         </Rating>
       </InfoWrapper>
       <Description>{description}</Description>
+      </Container>
     </Wrapper>
   );
 };

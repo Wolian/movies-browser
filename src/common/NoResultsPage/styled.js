@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { ReactComponent as NoResultsIcon } from "./Icon.svg";
 
-export const Wrapper = styled.section`
+export const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  max-width: 1384px;
   margin: 0 auto;
   padding: 10px;
 `;

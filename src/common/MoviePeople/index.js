@@ -1,11 +1,13 @@
 import { PersonTile } from "../PersonTile";
-import { Wrapper, Header, Container } from "./styled";
+import { Wrapper } from "../Wrapper/styled";
+import { Container, Header, PersonContainer } from "./styled";
 
 export const MoviePeople = ({ title, items }) => {
   return (
     <Wrapper>
-      <Header>{title}</Header>
       <Container>
+      <Header>{title}</Header>
+      <PersonContainer>
         {items?.map((item) => (
           <PersonTile
             key={item.id}
@@ -15,7 +17,8 @@ export const MoviePeople = ({ title, items }) => {
             photo={item.profile_path}
           />
         ))}
-      </Container>
+      </PersonContainer>
+    </Container>
     </Wrapper>
   );
 };

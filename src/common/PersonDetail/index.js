@@ -1,5 +1,5 @@
 import {
-    Wrapper,
+    Container,
     Poster,
     InfoWrapper,
     Name,
@@ -11,6 +11,7 @@ import {
 
 import { APIPhotoUrl } from "../../App/API";
 import noImgPoster from "../../common/PersonTile/noPersonPhoto.png";
+import { Wrapper } from "../Wrapper/styled";
 
 export const PersonDetail = ({
     poster,
@@ -21,6 +22,7 @@ export const PersonDetail = ({
 }) => {
     return (
         <Wrapper>
+            <Container>
             <Poster src={poster !== null ? `${APIPhotoUrl}w342/${poster}` : noImgPoster}
                 alt="poster" />
             <InfoWrapper>
@@ -31,6 +33,7 @@ export const PersonDetail = ({
                 </SectionBirth>
             </InfoWrapper>
             <Biography>{biography}</Biography>
+        </Container>
         </Wrapper>
     );
 };

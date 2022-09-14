@@ -14,6 +14,7 @@ import {
   selectPeople,
 } from "../moviesSlice";
 import { Center, Container } from "./styled";
+import { Wrapper } from "../../../common/Wrapper/styled";
 
 export const MoviePage = () => {
   const { id } = useParams();
@@ -68,5 +69,5 @@ export const MoviePage = () => {
       render = <ErrorPage />;
   }
 
-  return render;
+  return <Wrapper>{render}</Wrapper>;
 };

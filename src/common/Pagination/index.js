@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { searchNextPage } from "../../features/SearchResult/searchNameValue";
 import { Arrow, ArrowMobile } from "./Arrow";
-import { Wrapper, Paragraph, Link, Text, Number } from "./styled";
+import { PaginationWrapper, Paragraph, Link, Text, Number } from "./styled";
 
 export const Pagination = ({ totalPage, page }) => {
   const [numberPage, setNumberPage] = useState(+page);
@@ -22,7 +22,7 @@ export const Pagination = ({ totalPage, page }) => {
   }, [numberPage, navigate]);
 
   return (
-    <Wrapper>
+    <PaginationWrapper>
       <p>
         <Link
           disabled={numberPage <= 1 ? true : false}
@@ -73,6 +73,6 @@ export const Pagination = ({ totalPage, page }) => {
           />
         </Link>
       </p>
-    </Wrapper>
+    </PaginationWrapper>
   );
 };

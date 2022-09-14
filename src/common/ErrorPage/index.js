@@ -1,5 +1,6 @@
+import { Wrapper } from "../Wrapper/styled";
 import {
-  Wrapper,
+  Container,
   Icon,
   Span,
   Header,
@@ -11,6 +12,7 @@ import {
 export const ErrorPage = () => {
   return (
     <Wrapper>
+      <Container>
       <Icon />
       <Header>
         <Span>OOOps!</Span> Something went wrong...
@@ -19,6 +21,7 @@ export const ErrorPage = () => {
         <Paragaph>Please check your newtork connection and try again</Paragaph>
       </Text>
       <ButtonLink to="/">Back to home page</ButtonLink>
+    </Container>
     </Wrapper>
   );
 };

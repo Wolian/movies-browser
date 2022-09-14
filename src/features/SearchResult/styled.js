@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.main`
-  max-width: 1368px;
+export const SearchResultWrapper = styled.main`
   margin: 0 auto 20px auto;
   padding: 0 10px;
 `;

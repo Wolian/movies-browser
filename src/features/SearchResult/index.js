@@ -19,7 +19,8 @@ import { Loading } from "../../common/Loading";
 import { NoResultsPage } from "../../common/NoResultsPage";
 import { usePageNumber } from "../../common/usePageNumber";
 import { Pagination } from "../../common/Pagination";
-import { Wrapper } from "./styled";
+import { SearchResultWrapper } from "./styled";
+import { Wrapper } from "../../common/Wrapper/styled";
 
 export const SearchResult = () => {
   const dispatch = useDispatch();
@@ -99,5 +100,5 @@ export const SearchResult = () => {
     }
   }
 
-  return <Wrapper>{render}</Wrapper>;
+  return <Wrapper> <SearchResultWrapper>{render}</SearchResultWrapper> </Wrapper>;
 };
