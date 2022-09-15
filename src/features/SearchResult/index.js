@@ -35,7 +35,6 @@ export const SearchResult = () => {
 
   const query = urlParams.get(searchQueryParamName);
   const typePage = urlParams.get(searchTypePage);
-  const keysUrl = urlParams.keys();
 
   const { showResults } = useShowResultSearch(
     query,
@@ -86,16 +85,6 @@ export const SearchResult = () => {
         navigate({
           pathname: "/movies",
         });
-    }
-  }
-
-  for (const keyUrl of keysUrl) {
-    if (
-      keyUrl !== searchTypePage &&
-      keyUrl !== searchQueryParamName &&
-      keyUrl !== searchNextPage
-    ) {
-      render = <ErrorPage />;
     }
   }
 
