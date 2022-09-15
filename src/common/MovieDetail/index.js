@@ -1,3 +1,4 @@
+import { APIPhotoUrl } from "../../App/API";
 import {
   Poster,
   InfoWrapper,
@@ -19,8 +20,7 @@ import {
   Description,
   Container,
 } from "./styled";
-
-import { APIPhotoUrl } from "../../App/API";
+import noMoviePhoto from "../../common/MovieTile/noMoviePhoto.png";
 
 export const MovieDetail = ({
   poster,
@@ -32,10 +32,10 @@ export const MovieDetail = ({
   count,
   description,
 }) => {
+  const image = `${APIPhotoUrl}w500/${poster}`;
   return (
-
     <Container>
-      <Poster src={`${APIPhotoUrl}w342/${poster}`} alt="poster" />
+      <Poster src={poster ? image : noMoviePhoto} alt="poster" />
       <InfoWrapper>
         <Title>{title}</Title>
         <Year>{release ? release.slice(0, 4) : ""}</Year>

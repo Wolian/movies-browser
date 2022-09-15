@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Tile = styled.div`
@@ -5,15 +6,27 @@ export const Tile = styled.div`
   padding: 16px;
   gap: 12px;
   box-shadow: ${({ theme }) => theme.boxShadow};
+  transition: transform 0.5s, box-shadow 0.5s;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: flex;
     flex-direction: column;
     gap: 8px;
     border-radius: ${({ theme }) => theme.borderRadiusSmall};
   }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 8px;
   }
+
+  &:hover {
+    transform: translate(0, -15px);
+    box-shadow: ${({ theme }) => theme.boxShadowHover};
+  }
+`;
+
+export const LinkPerson = styled(Link)`
+  text-decoration: none;
 `;
 
 export const Image = styled.img`

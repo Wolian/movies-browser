@@ -9,9 +9,15 @@ export const TileWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.boxShadow};
   border-radius: ${({ theme }) => theme.borderRadiusSmall};
+  transition: transform 0.5s, box-shadow 0.5s;
 
   @media (max-width: 635px) {
     flex-direction: row;
+  }
+
+  &:hover {
+    transform: translate(0, -15px);
+    box-shadow: ${({ theme }) => theme.boxShadowHover};
   }
 `;
 
