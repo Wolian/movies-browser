@@ -71,5 +71,5 @@ export const MoviePage = () => {
       render = <ErrorPage />;
   }
 
-  return { render };
+  return  render;
 };
