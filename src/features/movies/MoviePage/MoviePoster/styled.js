@@ -41,7 +41,7 @@ export const Header = styled.section`
     );
 `;
 
-export const Wrapper = styled.div`
+export const PosterWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;

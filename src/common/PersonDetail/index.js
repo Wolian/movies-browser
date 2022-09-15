@@ -1,5 +1,5 @@
 import {
-    Wrapper,
+    Container,
     Poster,
     InfoWrapper,
     Name,
@@ -20,7 +20,7 @@ export const PersonDetail = ({
     birthDate,
 }) => {
     return (
-        <Wrapper>
+            <Container>
             <Poster src={poster !== null ? `${APIPhotoUrl}w342/${poster}` : noImgPoster}
                 alt="poster" />
             <InfoWrapper>
@@ -31,6 +31,6 @@ export const PersonDetail = ({
                 </SectionBirth>
             </InfoWrapper>
             <Biography>{biography}</Biography>
-        </Wrapper>
+        </Container>
     );
 };

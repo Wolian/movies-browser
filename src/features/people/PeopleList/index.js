@@ -11,7 +11,7 @@ import { usePageNumber } from "../../../common/usePageNumber";
 import { Pagination } from "../../../common/Pagination";
 import { Loading } from "../../../common/Loading";
 import { ErrorPage } from "../../../common/ErrorPage";
-import { Wrapper } from "./styled";
+import { Wrapper } from "../../../common/Wrapper/styled";
 
 export const PeopleList = () => {
   const dispatch = useDispatch();
@@ -42,5 +42,5 @@ export const PeopleList = () => {
       render = <ErrorPage />;
   }
 
-  return <Wrapper>{render}</Wrapper>;
+  return <Wrapper> {render} </Wrapper>;
 };

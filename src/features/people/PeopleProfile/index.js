@@ -13,7 +13,8 @@ import { MovieTile } from "../../../common/MovieTile";
 import { fetchGenres, selectGenres } from "../../movies/moviesSlice";
 import { Loading } from "../../../common/Loading";
 import { ErrorPage } from "../../../common/ErrorPage";
-import { CastCrewSection, Wrapper } from "./styled";
+import { CastCrewSection } from "./styled";
+import { Wrapper } from "../../../common/Wrapper/styled";
 
 export const PeopleProfile = () => {
   const { id } = useParams();
@@ -84,5 +85,5 @@ export const PeopleProfile = () => {
       render = <ErrorPage />;
   }
 
-  return <Wrapper>{render}</Wrapper>;
+  return <Wrapper> {render} </Wrapper>;
 };

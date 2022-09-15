@@ -1,6 +1,5 @@
 import { APIPhotoUrl } from "../../App/API";
 import {
-  Wrapper,
   Poster,
   InfoWrapper,
   Title,
@@ -19,6 +18,7 @@ import {
   Span,
   Votes,
   Description,
+  Container,
 } from "./styled";
 import noMoviePhoto from "../../common/MovieTile/noMoviePhoto.png";
 
@@ -34,7 +34,7 @@ export const MovieDetail = ({
 }) => {
   const image = `${APIPhotoUrl}w500/${poster}`;
   return (
-    <Wrapper>
+    <Container>
       <Poster src={poster ? image : noMoviePhoto} alt="poster" />
       <InfoWrapper>
         <Title>{title}</Title>
@@ -72,6 +72,6 @@ export const MovieDetail = ({
         </Rating>
       </InfoWrapper>
       <Description>{description}</Description>
-    </Wrapper>
+    </Container>
   );
 };

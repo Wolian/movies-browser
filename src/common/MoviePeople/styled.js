@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.section`
-  max-width: 1368px;
+export const Container = styled.section`
   margin: 64px auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -29,7 +28,7 @@ export const Header = styled.h2`
   } ;
 `;
 
-export const Container = styled.div`
+export const PersonContainer = styled.div`
   margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

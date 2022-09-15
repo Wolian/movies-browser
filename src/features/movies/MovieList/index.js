@@ -13,7 +13,8 @@ import {
   selectPopularMovies,
   selectPopularMoviesTotalPages,
 } from "../moviesSlice";
-import { Wrapper, Header, Container } from "./styled";
+import { Header, Container } from "./styled";
+import { Wrapper } from "../../../common/Wrapper/styled";
 
 export const MovieList = () => {
   const dispatch = useDispatch();
@@ -63,5 +64,5 @@ export const MovieList = () => {
       render = <ErrorPage />;
   }
 
-  return <Wrapper>{render}</Wrapper>;
+  return <Wrapper> {render} </Wrapper>;
 };
