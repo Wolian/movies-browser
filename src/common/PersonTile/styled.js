@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Tile = styled.div`
@@ -14,6 +15,10 @@ export const Tile = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 8px;
   }
+`;
+
+export const LinkPerson = styled(Link)`
+  text-decoration: none;
 `;
 
 export const Image = styled.img`
