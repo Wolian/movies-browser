@@ -13,6 +13,10 @@ import {
 } from "./styled";
 
 export const MoviePoster = ({ poster, title, rate, count }) => {
+  if (poster === null) {
+    return "";
+  }
+
   return (
     <Header>
       <Wrapper>
