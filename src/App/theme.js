@@ -18,5 +18,6 @@ export const theme = {
     tablet: "1024px",
   },
   boxShadow: "0px 4px 12px rgba(186, 199, 213, 0.5)",
+  boxShadowHover: "0px 0px 16px rgba(149, 159, 171, 1)",
   borderRadiusSmall: "5px",
 };
