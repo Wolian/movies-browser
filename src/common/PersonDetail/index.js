@@ -11,7 +11,6 @@ import {
 
 import { APIPhotoUrl } from "../../App/API";
 import noImgPoster from "../../common/PersonTile/noPersonPhoto.png";
-import { Wrapper } from "../Wrapper/styled";
 
 export const PersonDetail = ({
     poster,
@@ -21,7 +20,6 @@ export const PersonDetail = ({
     birthDate,
 }) => {
     return (
-        <Wrapper>
             <Container>
             <Poster src={poster !== null ? `${APIPhotoUrl}w342/${poster}` : noImgPoster}
                 alt="poster" />
@@ -34,6 +32,5 @@ export const PersonDetail = ({
             </InfoWrapper>
             <Biography>{biography}</Biography>
         </Container>
-        </Wrapper>
     );
 };

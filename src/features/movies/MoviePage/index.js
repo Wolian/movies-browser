@@ -13,7 +13,7 @@ import {
   selectMovies,
   selectPeople,
 } from "../moviesSlice";
-import { Center, Container } from "./styled";
+import { Container } from "./styled";
 import { Wrapper } from "../../../common/Wrapper/styled";
 
 export const MoviePage = () => {
@@ -34,9 +34,9 @@ export const MoviePage = () => {
   switch (loading) {
     case "loading":
       render = (
-        <Center>
+        <Wrapper>
           <Loading title={"please wait..."} />
-        </Center>
+        </Wrapper>
       );
       break;
     case "success":
@@ -48,20 +48,22 @@ export const MoviePage = () => {
             rate={movies.vote_average}
             count={movies.vote_count}
           />
-          <Container>
-            <MovieDetail
-              poster={movies.poster_path}
-              title={movies.title}
-              release={movies.release_date}
-              countries={movies.production_countries}
-              genres={movies.genres}
-              rate={movies.vote_average}
-              count={movies.vote_count}
-              description={movies.overview}
-            />
-            <MoviePeople title={"Cast"} items={people.cast} />
-            <MoviePeople title={"Crew"} items={people.crew} />
-          </Container>
+          <Wrapper>
+            <Container>
+              <MovieDetail
+                poster={movies.poster_path}
+                title={movies.title}
+                release={movies.release_date}
+                countries={movies.production_countries}
+                genres={movies.genres}
+                rate={movies.vote_average}
+                count={movies.vote_count}
+                description={movies.overview}
+              />
+              <MoviePeople title={"Cast"} items={people.cast} />
+              <MoviePeople title={"Crew"} items={people.crew} />
+            </Container>
+          </Wrapper>
         </>
       );
       break;
@@ -69,5 +71,5 @@ export const MoviePage = () => {
       render = <ErrorPage />;
   }
 
-  return <Wrapper>{render}</Wrapper>;
+  return { render };
 };

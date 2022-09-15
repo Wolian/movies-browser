@@ -1,5 +1,4 @@
 import { APIPhotoUrl } from "../../../../App/API";
-import { Wrapper } from "../../../../common/Wrapper/styled";
 import {
   Header,
   PosterWrapper,
@@ -15,7 +14,6 @@ import {
 
 export const MoviePoster = ({ poster, title, rate, count }) => {
   return (
-    <Wrapper>
       <Header>
       <PosterWrapper>
         <Image src={`${APIPhotoUrl}original/${poster}`} alt="" />
@@ -32,6 +30,5 @@ export const MoviePoster = ({ poster, title, rate, count }) => {
         </MainInfo>
       </PosterWrapper>
     </Header>
-    </Wrapper>
   );
 };

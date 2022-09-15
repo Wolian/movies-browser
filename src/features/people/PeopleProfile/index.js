@@ -13,7 +13,7 @@ import { MovieTile } from "../../../common/MovieTile";
 import { fetchGenres, selectGenres } from "../../movies/moviesSlice";
 import { Loading } from "../../../common/Loading";
 import { ErrorPage } from "../../../common/ErrorPage";
-import { CastCrewSection, PeopleWrapper } from "./styled";
+import { CastCrewSection } from "./styled";
 import { Wrapper } from "../../../common/Wrapper/styled";
 
 export const PeopleProfile = () => {
@@ -85,5 +85,5 @@ export const PeopleProfile = () => {
       render = <ErrorPage />;
   }
 
-  return <Wrapper> <PeopleWrapper>{render}</PeopleWrapper> </Wrapper>;
+  return <Wrapper> {render} </Wrapper>;
 };

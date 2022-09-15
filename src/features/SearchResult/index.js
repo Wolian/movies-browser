@@ -19,7 +19,6 @@ import { Loading } from "../../common/Loading";
 import { NoResultsPage } from "../../common/NoResultsPage";
 import { usePageNumber } from "../../common/usePageNumber";
 import { Pagination } from "../../common/Pagination";
-import { SearchResultWrapper } from "./styled";
 import { Wrapper } from "../../common/Wrapper/styled";
 
 export const SearchResult = () => {
@@ -100,5 +99,5 @@ export const SearchResult = () => {
     }
   }
 
-  return <Wrapper> <SearchResultWrapper>{render}</SearchResultWrapper> </Wrapper>;
+  return <Wrapper> {render} </Wrapper>;
 };

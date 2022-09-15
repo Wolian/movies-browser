@@ -1,4 +1,3 @@
-import { Wrapper } from "../Wrapper/styled";
 import {
   Container,
   Icon,
@@ -11,8 +10,7 @@ import {
 
 export const ErrorPage = () => {
   return (
-    <Wrapper>
-      <Container>
+    <Container>
       <Icon />
       <Header>
         <Span>OOOps!</Span> Something went wrong...
@@ -22,6 +20,5 @@ export const ErrorPage = () => {
       </Text>
       <ButtonLink to="/">Back to home page</ButtonLink>
     </Container>
-    </Wrapper>
   );
 };

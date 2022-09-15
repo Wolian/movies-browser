@@ -11,7 +11,6 @@ import { usePageNumber } from "../../../common/usePageNumber";
 import { Pagination } from "../../../common/Pagination";
 import { Loading } from "../../../common/Loading";
 import { ErrorPage } from "../../../common/ErrorPage";
-import { PeopleWrapper } from "./styled";
 import { Wrapper } from "../../../common/Wrapper/styled";
 
 export const PeopleList = () => {
@@ -43,5 +42,5 @@ export const PeopleList = () => {
       render = <ErrorPage />;
   }
 
-  return <Wrapper> <PeopleWrapper>{render}</PeopleWrapper> </Wrapper>;
+  return <Wrapper> {render} </Wrapper>;
 };

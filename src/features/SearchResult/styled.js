@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const SearchResultWrapper = styled.main`
-  margin: 0 auto 20px auto;
-  padding: 0 10px;
-`;
-
 export const ContainerMovie = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));

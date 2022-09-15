@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const PeopleWrapper = styled.main`
-  margin: 0 auto;
-  padding: 0 10px;
-`;
-
 export const CastCrewSection = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));

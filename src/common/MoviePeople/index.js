@@ -1,11 +1,9 @@
 import { PersonTile } from "../PersonTile";
-import { Wrapper } from "../Wrapper/styled";
 import { Container, Header, PersonContainer } from "./styled";
 
 export const MoviePeople = ({ title, items }) => {
   return (
-    <Wrapper>
-      <Container>
+    <Container>
       <Header>{title}</Header>
       <PersonContainer>
         {items?.map((item) => (
@@ -19,6 +17,5 @@ export const MoviePeople = ({ title, items }) => {
         ))}
       </PersonContainer>
     </Container>
-    </Wrapper>
   );
 };
