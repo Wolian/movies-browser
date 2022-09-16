@@ -3,7 +3,7 @@
 Movie Browser is an application where you can browse the films, actors and crew working on a film. 
 In addition, the app has a search engine where you can find your favourite film and actor.
 
-![Movie-browser photo](https://i.ibb.co/9sVkkxF/movie.webp)
+![Movie-browser photo](https://raw.githubusercontent.com/Wolian/movies-browser/main/readme/movie.webp)
 
 ## Demo link  
 https://wolian.github.io/movies-browser/
