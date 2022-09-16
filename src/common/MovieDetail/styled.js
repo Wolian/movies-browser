@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as StarIcon } from "../../features/movies/MoviePage/Vector.svg";
+import { ReactComponent as StarIcon } from "../images/Vector.svg";
 
 export const Container = styled.section`
   background-color: ${({ theme }) => theme.colors.white};
