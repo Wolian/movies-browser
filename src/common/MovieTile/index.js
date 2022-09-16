@@ -14,7 +14,7 @@ import {
   TileWrapper,
   MovieImage,
 } from "./styled";
-import vector from "../images/vector.png";
+import vector from "../images/Vector.svg";
 import { APIPhotoUrl } from "../../App/API";
 import noMoviePhoto from "./noMoviePhoto.png";
 

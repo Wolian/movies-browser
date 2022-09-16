@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as StarIcon } from "../Vector.svg";
+import { ReactComponent as StarIcon } from "../../../../common/images/Vector.svg";
 
 export const Header = styled.section`
   display: flex;
