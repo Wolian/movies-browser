@@ -1,11 +1,7 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  searchNextPage,
-  searchQueryParamName,
-  searchTypePage,
-} from "./searchNameValue";
+import { searchQueryParamName, searchTypePage } from "./searchNameValue";
 import { useShowResultSearch } from "./useShowResultSearch";
 import {
   fetchSearch,
